@@ -452,13 +452,8 @@ h6::before {
   animation: ccc 6s linear infinite;
 }
 
-#site-info{
-  font-size: 17px;
-}
-
 /* 文章標題置中 */
 #post-info{
-  font-size: 17px;
   width: fit-content;
   top: 55%;
   transform: translateY(-50%);
@@ -478,6 +473,18 @@ h1.post-title{
 /* 適配寬螢幕 */
 #content-inner.layout{
   max-width: 1400px;
+}
+/* 侧边卡片栏宽度 */
+.aside-content {
+  max-width: 318px;
+  min-width: 300px;
+}
+/* 平板尺寸自适应(不启用侧边栏宽度限制) */
+@media screen and (max-width: 900px) {
+  .aside-content {
+    max-width: none !important;
+    padding: 0 5px 0 5px;
+  }
 }
 
 /* 側邊欄寬度限制 */
