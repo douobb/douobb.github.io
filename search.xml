@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Google資料分析課程心得</title>
+      <link href="/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/"/>
+      <url>/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/</url>
+      
+        <content type="html"><![CDATA[<h1>Google Data Analytics Certificate</h1><h2 id="證書簡介">證書簡介</h2><div class="note primary no-icon flat"><p>官網介紹：<br>無論你是剛起步還是想在數據分析領域邁出下一步，Google 的專業證書都可以幫助您獲得必備的技能，學習 R 程式設計、SQL、Python、Tableau 等知識。</p></div><p>本證書總共包含八個課程，雖然官網上的規劃是用六個月來完成，不過因為是訂閱制度，因此可以依照自己的進度自行調整，省下一筆錢，這次總共用了三十多天來完成 (包含七天的試用期)，詳細的時間分配之後也會提到。</p><p>課程的知識不算太過於深入，但是涵蓋了許多面向，如同官網所提到的，介紹了從資料清理、分析到視覺化的各種工具，除此之外也與職場做了許多連結，包括之後的更多應用以及求職、面試等內容都有提到，就算沒有太多的先備知識學起來也不算太困難，非常適合新手參與。</p><blockquote><p>課程為全英文，不過大部分的影片都有字幕，理解上不會太困難，只是有些專業的名詞需要多注意。</p></blockquote><h2 id="各課程內容-時間分配">各課程內容 &amp; 時間分配</h2><p>分配時間為個人經驗，主要是為了在一個月內完成，需依照實際情況分配。</p><table><thead><tr><th>課程</th><th>主要內容</th><th>分配時間</th><th>筆記</th></tr></thead><tbody><tr><td>Foundations: Data, Data, Everywhere</td><td>課程簡介、工作流程以及常用工具介紹</td><td>3 天</td><td><a href="https://douobb.github.io/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/">Link</a></td></tr><tr><td>Ask Questions to Make Data-Driven Decisions</td><td>如何進行提問、試算表的使用</td><td>3 天</td><td><a href="https://douobb.github.io/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/">Link</a></td></tr><tr><td>Prepare Data for Exploration</td><td>如何挑選資料、SQL 的使用</td><td>3 天</td><td><a href="https://douobb.github.io/2024/06/30/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-3/">Link</a></td></tr><tr><td>Process Data from Dirty to Clean</td><td>如何利用工具清理資料、學習製作簡歷</td><td>4 天</td><td><a href="https://douobb.github.io/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/">Link</a></td></tr><tr><td>Analyze Data to Answer Questions</td><td>如何利用試算表、SQL 進行分析</td><td>5 天</td><td><a href="https://douobb.github.io/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/">Link</a></td></tr><tr><td>Share Data Through the Art of Visualization</td><td>資料視覺化技巧、Tableau 使用以及簡報技巧</td><td>5 天</td><td><a href="https://douobb.github.io/2024/07/15/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-6/">Link</a></td></tr><tr><td>Data Analysis with R Programming</td><td>使用 R 語言進行資料分析、視覺化</td><td>5 天</td><td><a href="https://douobb.github.io/2024/07/20/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-7/">Link</a></td></tr><tr><td>Google Data Analytics Capstone: Complete a Case Study</td><td>案例分析、求職面試技巧</td><td>5 天</td><td><a href="https://douobb.github.io/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-8/">Link</a></td></tr></tbody></table><h2 id="總結">總結</h2><p>相當推薦給新手的課程，難易度適中，可以對資料分析有更多的了解，學習到許多實用工具，其他的面試以及工作技巧在未來也許會有幫助，註冊時還送了一門 <code>Google AI Essentials</code> 的課程，之後也會將課程的筆記與心得上傳。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 資料分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Google資料分析課程筆記-8</title>
       <link href="/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-8/"/>
       <url>/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-8/</url>
