@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SD-AMD顯卡安裝</title>
+      <link href="/2024/08/31/SD-AMD%E9%A1%AF%E5%8D%A1%E5%AE%89%E8%A3%9D/"/>
+      <url>/2024/08/31/SD-AMD%E9%A1%AF%E5%8D%A1%E5%AE%89%E8%A3%9D/</url>
+      
+        <content type="html"><![CDATA[<div class="note primary no-icon flat"><p>資料取自：<a href="https://github.com/CS1o/Stable-Diffusion-Info/wiki/Installation-Guides">Stable-Diffusion-Info</a> by CS1o</p></div><h1>[AMD] Automatic1111 with ZLUDA</h1><ul><li>顯卡：AMD VEGA, Vii, APUs, RX5500XT, RX5600XT, 5700XT, RX 6600, 7700S 以及更高階顯卡。</li><li>驅動程式：24.1.1 及以上版本。</li></ul><h2 id="下載適用於-amd-顯卡的-autoamatic1111">下載適用於 AMD 顯卡的 Autoamatic1111</h2><ol><li>在目標資料夾內開啟終端機，輸入以下代碼</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/lshqqytiger/stable-diffusion-webui-amdgpu &amp;&amp; cd stable-diffusion-webui-amdgpu &amp;&amp; git submodule init &amp;&amp; git submodule update</span><br></pre></td></tr></table></figure><ol start="2"><li>在下載下來的資料夾內找到 <code>webui-user.bat</code> 右鍵以記事本打開，在 <code>COMMANDLINE_ARGS=</code> 後方加入 <code>--use-zluda --update-check --skip-ort</code>。</li><li>執行 <code>webui-user.bat</code> 檔案，在運行時可能發生錯誤，直接關閉進行後續步驟。</li></ol><h2 id="zluda-設定">Zluda 設定</h2><h3 id="rx6800-及以上顯卡">RX6800 及以上顯卡</h3><ol><li>下載並安裝 <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">AMD HIP SDK 6.1.2</a>。</li><li>下載最新版本的 <a href="https://github.com/lshqqytiger/ZLUDA/releases/">ZLUDA</a>，解壓縮之後將資料夾重新命名為 <code>ZLUDA</code> 並將其置於 <code>C 槽</code>內。</li><li>把 <code>C:\ZLUDA</code> 以及 <code>%HIP_PATH%bin</code> 加入 <code>環境變數 &gt; 系統變數 &gt; Path</code> 中。</li><li>執行 <code>webui-user.bat</code>，第一次產生圖像可能需要 15 至 40 分鐘載入。</li></ol><h3 id="rx6800-以下顯卡">RX6800 以下顯卡</h3><ol><li><p>下載並安裝 <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">AMD HIP SDK 5.7.1</a>。</p></li><li><p>下載相容版本的 <a href="https://github.com/lshqqytiger/ZLUDA/releases/download/rel.11cc5844514f93161e0e74387f04e2c537705a82/ZLUDA-windows-amd64.zip">ZLUDA</a>，解壓縮之後將資料夾重新命名為 <code>ZLUDA</code> 並將其置於 <code>C 槽</code>內。</p></li><li><p>根據顯卡下載相應的檔案</p><ul><li>RX 6700 or 6700XT: <a href="https://github.com/brknsoul/ROCmLibs/blob/main/Optimised_ROCmLibs_gfx1031.7z?download=">Optimised_ROCmLibs_gfx1031.7z</a></li><li>RX 6600 or 6600XT: <a href="https://github.com/brknsoul/ROCmLibs/raw/main/Optimised_ROCmLibs_gfx1032.7z?download=">Optimised_ROCmLibs_gfx1032.7z</a></li><li>RX 580, 5600/XT, 5700/XT, VEGA 56, VEGA 64 and Radeon VII or RX7700S: <a href="https://github.com/brknsoul/ROCmLibs/raw/main/ROCmLibs.7z">ROCmLibs.7z</a></li></ul><p>如果使用 <code>AMD 780M-APU</code> 可以參考 <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU-">https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU-</a></p></li><li><p>在 <code>C:\Program Files\AMD\ROCm\5.7\bin\rocblas</code> 中複製 <code>library</code> 資料夾並重新命名為 <code>old_library</code>，把剛剛下載下來的檔案解壓縮後放入<code>library</code> 資料夾，之後將電腦重新開機。</p></li><li><p>把 <code>C:\ZLUDA</code> 以及 <code>%HIP_PATH%bin</code> 加入 <code>環境變數 &gt; 系統變數 &gt; Path</code> 中。</p></li><li><p>執行 <code>webui-user.bat</code>，第一次產生圖像可能需要 15 至 40 分鐘載入。</p></li></ol><div class="note simple"><p>RX580 顯卡需要進行額外步驟：<br>在 <code>stable-diffusion-webui-amdgpu</code> 中打開終端機，輸入以下三行代碼：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">venv\scripts\activate</span><br><span class="line">pip uninstall torch torchvision torchaudio -y</span><br><span class="line">pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu118</span><br></pre></td></tr></table></figure></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>演算法筆記-Tree-2</title>
       <link href="/2024/08/10/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-Tree-2/"/>
       <url>/2024/08/10/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-Tree-2/</url>
