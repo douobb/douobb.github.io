@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>心理學筆記-L6</title>
+      <link href="/2024/10/11/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L6/"/>
+      <url>/2024/10/11/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L6/</url>
+      
+        <content type="html"><![CDATA[<h1>L6 記憶</h1><img src="/2024/10/11/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L6/memory.jpg" class="" title="memory"><h2 id="sensory-memory-感覺記憶">Sensory Memory 感覺記憶</h2><p>當客觀刺激停止作用之後，感覺訊息會在一個極短的時間內保存下來。</p><ul><li>Iconic memory 圖像記憶 - 視覺</li><li>Echoic memory 回聲記憶 - 聽覺</li></ul><h2 id="short-term-memory-短期記憶">Short-term Memory 短期記憶</h2><p>可以在頭腦中讓少量資訊保持啟用狀態，在短時間內可以使用。短期記憶的持續時間以秒計算，通常在 5－20 秒，可以透過 <code>Rehearsal (覆誦)</code> 增加其留在頭腦的時間，而短期記憶的容量約為 <code>7 ± 2</code> 個元素。</p><h2 id="long-term-memory-長期記憶">Long-term Memory 長期記憶</h2><p>能夠保持幾天到幾年的記憶。</p><h3 id="explicit-memory-外顯記憶">Explicit Memory 外顯記憶</h3><ul><li>Semantic 語言 - 一般的事實性知識。</li><li>Episodic 情節 - 特定事件觀察性的資訊。</li><li>Serial Position Effect 序位效應<br>人們傾向於對首先見到的事物和最後見到的事物有更好的記憶：<ul><li>primacy effect (一開始見到的)</li><li>recency effect (最後見到的)</li></ul></li></ul><h3 id="implicit-memory-內隱記憶">Implicit Memory 內隱記憶</h3><ul><li>Procedural memory 程序記憶 - 技術性知識。</li><li>Classical conditioning 古典制約</li><li>Priming 促發<br>接觸某刺激後這個刺激會對你之後的行為產生影響。</li></ul><h2 id="forgetting-遺忘">Forgetting 遺忘</h2><ul><li>Encoding failure<br>記憶在一開始沒有完全形成。</li><li>Storage Failure<br>記憶痕跡變弱，記憶力衰退。</li><li>Retrieval Failure<ul><li>干擾</li><li>狀態依賴的學習 - 學習時與測驗時保持相同的情緒 (傷心或快樂) 可能導致更好的成績。</li></ul></li></ul><h2 id="is-memory-always-real">Is memory always real?</h2><p>Elizabeth Loftus 的實驗：<br>受試者分為兩組人，觀看兩車對撞的影片，分別詢問</p><ul><li>請問這兩部車 <code>碰撞</code> 時，時速大約多少?</li><li>請問這兩部車 <code>猛烈撞擊</code> 時，時速大約多少?</li></ul><p>下組人比上組人事後更容易回憶地上有碎玻璃，<code>即使事實上沒有碎玻璃</code>。</p><h3 id="flashbulb-memories-閃光燈記憶">Flashbulb Memories 閃光燈記憶</h3><p>當重大的事件發生時，形成的永久性記憶，讓人有歷歷在目的感覺，雖然人們對自己的記憶充滿自信，但卻會遺忘記憶的細節，甚至產生虛假的記憶。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 心理學 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>心理學筆記-L5</title>
       <link href="/2024/10/04/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L5/"/>
       <url>/2024/10/04/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L5/</url>
@@ -825,9 +850,9 @@
             
             <tag> 演算法 </tag>
             
-            <tag> DFS </tag>
-            
             <tag> 陣列 </tag>
+            
+            <tag> DFS </tag>
             
         </tags>
       
