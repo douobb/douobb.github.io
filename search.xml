@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>心理學筆記-L8</title>
+      <link href="/2024/11/01/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L8/"/>
+      <url>/2024/11/01/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L8/</url>
+      
+        <content type="html"><![CDATA[<h1>L8 智力</h1><h2 id="測量">測量</h2><p>心理學相關的測量對於準確度的判斷方式：</p><ul><li>Reliability 信度 - 分數穩不穩定<ul><li>Test-retest reliability 再測信度 - 同一組人做相同的測驗兩次，這兩次的結果相關高不高。</li><li>Internal reliability 內部信度 - 把同一份測驗的單數題和偶數題做相關，這相關值高不高。</li></ul></li><li>Validity 效度 - 測驗是否能取得預期的測量結果<ul><li>Criterion-related validity 效標效度 - 這測驗跟效標是否相關。</li></ul></li></ul><div class="note primary no-icon flat"><p>效標：一個可以用來檢定你測驗好壞的標準。<br>ex:智力測驗常用的效標是學生日後的學習表現。</p></div><p>其他相關名詞：</p><ul><li>Norm 常模<ul><li>你必須要把你的分數跟其他人分數構成的分配 (常模) 做比較才有意義。</li></ul></li><li>Standardization 標準化<ul><li>每個人必須要在相同的情境下作測驗。</li></ul></li></ul><h2 id="智力測驗">智力測驗</h2><ul><li>The Stanford-Binet Intelligence Scale 兒童用<ul><li>Intelligence Quotient (IQ) 智商 = Mental age (心智年齡) / Chronological age (實際年齡)* 100</li></ul></li><li>The Wechsler Intelligence Scale 成人用 (16歲以上)<ul><li>包括語言 verbal 及非語言 non-verbal 量表。</li><li>目前版本 - WAIS-IV。</li><li>平均值 100，標準差 15。</li></ul></li></ul><img src="/2024/11/01/%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L8/iq.png" class="" title="IQ"><h2 id="智力理論">智力理論</h2><h3 id="psychometric-theories-心理測量學">Psychometric theories 心理測量學</h3><p>從智力測驗分數去探測智力。</p><ul><li>Spearman - 人們在不同測驗的分數有高相關性。<ul><li>存在著一個 <code>General intelligence</code> 或是 <code>g</code>，與各種能力有相關性。</li></ul></li><li>Cattell - <code>General intelligence</code> 可以被分為：<ul><li>Crystallized intelligence 結晶智力 - 詞彙與基本知識。</li><li>Fluid Intelligence 流體智力 - 發現複雜聯繫、解決問題。</li></ul></li></ul><h3 id="sternberg-s-triarchic-theory-智力三元理論">Sternberg’s Triarchic theory 智力三元理論</h3><p>將智力分為三個面向：</p><ul><li>Analytical intelligence 分析智力<ul><li>知識獲取。</li><li>解決問題。</li><li>策略選擇。</li></ul></li><li>Creative intelligence 創造智力</li><li>Practical intelligence 實用智力<ul><li>適應新環境。</li></ul></li></ul><h3 id="gardner-s-theory-of-eight-multiple-intelligences">Gardner’s Theory of Eight Multiple Intelligences</h3><p>將智力分為八個部分：</p><ul><li>語言</li><li>邏輯與數學</li><li>視覺與空間</li><li>音樂</li><li>身體動覺</li><li>內在</li><li>人際</li><li>自然主義</li><li>存在主義</li></ul><h2 id="智力與遺傳-環境">智力與遺傳 &amp; 環境</h2><p>雙胞胎研究：利用同卵 &amp; 異卵雙胞胎的基因特性以及養育的環境區別做研究。</p><ul><li>基因的重要性：同卵 &amp; 異卵雙胞胎各一組一起養，觀察兩組的相關性。</li><li>環境的重要性：同卵雙胞胎，一組一起養，一組分開養，觀察兩組的相關性。</li></ul><p>結果：兩者都有相關，基因 &amp; 環境也許會互相影響 (不是獨立變量)。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 心理學 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>演算法筆記-霍夫曼編碼</title>
       <link href="/2024/10/22/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%B7%A8%E7%A2%BC/"/>
       <url>/2024/10/22/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%B7%A8%E7%A2%BC/</url>
@@ -902,9 +927,9 @@
             
             <tag> 演算法 </tag>
             
-            <tag> DFS </tag>
-            
             <tag> 陣列 </tag>
+            
+            <tag> DFS </tag>
             
         </tags>
       
