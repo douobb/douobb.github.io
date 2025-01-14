@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Google資料分析課程筆記-5 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Course 5 - Analyze Data to Answer Questions 簡介 This is the fifth course in the Google Data Analytics Certificate. In this course, you’ll explore what it means to actually analyze your data. You’ll tak">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google資料分析課程筆記-5">
+<meta property="og:url" content="http://example.com/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="Course 5 - Analyze Data to Answer Questions 簡介 This is the fifth course in the Google Data Analytics Certificate. In this course, you’ll explore what it means to actually analyze your data. You’ll tak">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/cover.jpg">
+<meta property="article:published_time" content="2024-07-10T00:08:49.000Z">
+<meta property="article:modified_time" content="2024-07-10T03:00:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="資料分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Google資料分析課程筆記-5',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-10 11:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/cover.jpg')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Google資料分析課程筆記-5</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2024-07-10T00:08:49.000Z" title="發表於 2024-07-10 08:08:49">2024-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2024-07-10T03:00:00.000Z" title="更新於 2024-07-10 11:00:00">2024-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B/">線上課程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>5分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Google資料分析課程筆記-5"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Course 5 - Analyze Data to Answer Questions</h1>
+<h2 id="簡介">簡介</h2>
+<p>This is the fifth course in the Google Data Analytics Certificate. In this course, you’ll explore what it means to actually analyze your data. You’ll take what you’ve learned up to this point and apply it to make sense of the data you’ve collected. You’ll learn how to organize and format your data using spreadsheets and SQL to help you look at and think about your data in different ways. You’ll also find out how to perform complex calculations with your data to address business objectives. You’ll learn how to use formulas, functions, and SQL queries as you conduct your analysis.</p>
+<h2 id="章節大綱">章節大綱</h2>
+<ol>
+<li>Organize data for more effective analysis<br>
+了解如何使用試算表以及 SQL 進行排序和篩選。</li>
+<li>Format and adjust data<br>
+了解轉換和格式化資料，以及學習利用 SQL 組合資料。</li>
+<li>Aggregate data for analysis<br>
+學習如何使用 SQL 從多個資料庫提取資料進行組合。</li>
+<li>Perform data calculations<br>
+利用試算表中的公式、函數和資料透視表以及 SQL 幫助計算，並且學習使用 SQL 管理臨時表格。</li>
+</ol>
+<h1>內容筆記</h1>
+<h2 id="module-1-organize-data-for-more-effective-analysis">Module 1 - Organize data for more effective analysis</h2>
+<h3 id="試算表中的排序">試算表中的排序</h3>
+<p>如果排序的條件較少的話，可以使用內建的 <code>SORT</code> 函數，而如果條件較多則建議使用內建的排序功能。</p>
+<ul>
+<li>SORT(範圍, 排序欄, 遞增, [排序欄_2, 遞增_2, …])<br>
+以一欄或多欄中的值為依據，排列指定陣列或範圍內的資料列順序。</li>
+<li>全選資料，點擊 <code>資料 &gt; 排序範圍 &gt; 範圍排序進階選項</code></li>
+</ul>
+<h3 id="sql-中的排序">SQL 中的排序</h3>
+<p>預設為升序排序，如果要改成降序只要在後面加上 <code>DESC</code> 即可</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column_name1 <span class="keyword">ASC</span><span class="operator">|</span><span class="keyword">DESC</span>, column_name2 <span class="keyword">ASC</span><span class="operator">|</span>DESC...</span><br></pre></td></tr></table></figure>
+<h2 id="module-2-format-and-adjust-data">Module 2 - Format and adjust data</h2>
+<h3 id="試算表轉換單位">試算表轉換單位</h3>
+<p>CONVERT(數值, 初始單位, 目標單位)，利用 <code>CONVERT</code> 函數可以將數值轉換成其他計量單位。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=CONVERT (A1, &quot;F&quot;, “C”)</span><br></pre></td></tr></table></figure>
+<p>常用的單位 (使用時須注意大小寫)：</p>
+<ul>
+<li>重量：u、grain、g、ozm、lbm、ton…</li>
+<li>距離：ang、Picapt、pica、in、ft、yd、m…</li>
+<li>時間：sec、min、hr、day、yr</li>
+<li>溫度：C、F、K</li>
+<li>資訊：bit、byte</li>
+<li>速度：m/hr、mph、kn、admkn、m/s</li>
+</ul>
+<h3 id="sql-字串合併">SQL 字串合併</h3>
+<table>
+<thead>
+<tr>
+<th>函數</th>
+<th>範例</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONCAT(string1, string2, …, string_n)</td>
+<td>CONCAT(‘Google’, ‘.com’)</td>
+<td><a target="_blank" rel="noopener" href="http://Google.com">Google.com</a></td>
+</tr>
+<tr>
+<td>CONCAT_WS(separator, string1, string2, …, string_n)</td>
+<td>CONCAT_WS(’ . ', ‘www’, ‘google’, ‘com’)</td>
+<td><a target="_blank" rel="noopener" href="http://www.google.com">www.google.com</a></td>
+</tr>
+<tr>
+<td>|| or +</td>
+<td>‘Google’ || ‘.com’</td>
+<td><a target="_blank" rel="noopener" href="http://Google.com">Google.com</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="module-3-aggregate-data-for-analysis">Module 3 - Aggregate data for analysis</h2>
+<h3 id="join-函數">JOIN 函數</h3>
+<p><code>JOIN</code> 函數可以根據相關欄位來組合多個表中的列，根據組合的關係可以分為 INNER JOIN、LEFT JOIN、RIGHT JOIN 和 OUTER JOIN，可以表示如下圖 (取自 <a target="_blank" rel="noopener" href="https://learnsql.com/blog/learn-and-practice-sql-joins/">How to Learn SQL JOINs</a>) ：</p>
+<img src="/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/join.png" class="" title="JOIN類型">
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  column_name(s)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  table1 <span class="comment">--left table</span></span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2 <span class="comment">--right table</span></span><br><span class="line"><span class="keyword">ON</span> table1.column_name <span class="operator">=</span> table2.column_name <span class="comment">--共同欄位</span></span><br></pre></td></tr></table></figure>
+<h3 id="子查詢">子查詢</h3>
+<p>透過子查詢可以組合不同的邏輯，透過單一查詢完成更多工作，並且使程式更有效率且容易閱讀。</p>
+<ol>
+<li><code>SELECT</code> 中的子查詢</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	station_id,</span><br><span class="line">	num_bikes_available,</span><br><span class="line">	(<span class="keyword">SELECT</span></span><br><span class="line">		<span class="built_in">AVG</span>(num_bikes_available)</span><br><span class="line">	<span class="keyword">FROM</span> bigquery<span class="operator">-</span>public<span class="operator">-</span>data.new_york.citibike_stations) <span class="keyword">AS</span> avg_num_bikes_available <span class="comment">--子查詢</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  bigquery<span class="operator">-</span>public<span class="operator">-</span>data.new_york.citibike_stations</span><br></pre></td></tr></table></figure>
+<p>透過子查詢，加入 <code>avg_num_bikes_available</code> 作為欄位。</p>
+<ol start="2">
+<li><code>FROM</code> 中的子查詢</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	station_id,</span><br><span class="line">	name,</span><br><span class="line">	number_of_rides <span class="keyword">AS</span> number_of_rides_starting_at_station</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			<span class="built_in">CAST</span>(start_station_id <span class="keyword">AS</span> STRING) <span class="keyword">AS</span> start_station_id_str,</span><br><span class="line">			<span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> number_of_rides</span><br><span class="line">		<span class="keyword">FROM</span> </span><br><span class="line">      		bigquery<span class="operator">-</span>public<span class="operator">-</span>data.new_york.citibike_trips</span><br><span class="line">		<span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">			<span class="built_in">CAST</span>(start_station_id <span class="keyword">AS</span> STRING)</span><br><span class="line">	) <span class="comment">--子查詢</span></span><br><span class="line">	<span class="keyword">AS</span> station_num_trips</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> </span><br><span class="line">	bigquery<span class="operator">-</span>public<span class="operator">-</span>data.new_york.citibike_stations </span><br><span class="line"><span class="keyword">ON</span> </span><br><span class="line">	station_id <span class="operator">=</span> start_station_id_str</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">	number_of_rides <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<p>利用子查詢直接建立一個表 <code>station_num_trips</code>，並透過 <code>FROM</code> 去存取。</p>
+<ol start="3">
+<li><code>WHERE</code> 中的子查詢</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	station_id,</span><br><span class="line">	name</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	bigquery<span class="operator">-</span>public<span class="operator">-</span>data.new_york.citibike_stations</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	station_id <span class="keyword">IN</span></span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			<span class="built_in">CAST</span>(start_station_id <span class="keyword">AS</span> STRING) <span class="keyword">AS</span> start_station_id_str</span><br><span class="line">		<span class="keyword">FROM</span></span><br><span class="line">	    bigquery<span class="operator">-</span>public<span class="operator">-</span>data.new_york.citibike_trips</span><br><span class="line">	  <span class="keyword">WHERE</span></span><br><span class="line">		  usertype <span class="operator">=</span> <span class="string">&#x27;Subscriber&#x27;</span></span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+<p>利用子查詢建立一個表，之後用 <code>IN</code> 來篩選出有在表內的特定 id。</p>
+<h3 id="having-子句">HAVING 子句</h3>
+<p>因為 <code>WHERE</code> 沒辦法和聚合函數一起使用，因此必須使用 <code>HAVING</code> 來替代。</p>
+<ul>
+<li>聚合函數類型
+<ul>
+<li>MIN()</li>
+<li>MAX()</li>
+<li>COUNT()</li>
+<li>SUM()</li>
+<li>AVG()</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">HAVING</span> <span class="keyword">condition</span></span><br></pre></td></tr></table></figure>
+<h2 id="module-4-perform-data-calculations">Module 4 - Perform data calculations</h2>
+<h3 id="更多試算表函數">更多試算表函數</h3>
+<ol>
+<li>SUMIF(範圍, 條件, [加總範圍])<br>
+傳回範圍內符合條件的項目總和，若未指定加總範圍，會使用<code>範圍</code>引數指定的範圍來計算總和。</li>
+<li>SUMIFS(加總範圍, 條件核對範圍1, 條件1, [條件核對範圍2, 條件2, …])<br>
+傳回根據多個條件而得出的範圍總和，須注意和 <code>SUMIF</code> 的參數順序不同。</li>
+<li>COUNTIFS(條件核對範圍1, 條件1, [條件核對範圍2, 條件2, …])<br>
+傳回根據多個條件而得出的範圍大小。</li>
+<li>SUMPRODUCT(陣列1, [陣列2], …)<br>
+針對兩個或更多大小相同的陣列或範圍，計算彼此對應項目的乘積總和。</li>
+</ol>
+<h3 id="資料驗證">資料驗證</h3>
+<p>資料驗證有助於確認資料的完整性，並確保數據是乾淨的。</p>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>解釋</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>資料類型</td>
+<td>資料是否與與欄位定義的資料類型相符</td>
+<td>年齡值必須是數字類型</td>
+</tr>
+<tr>
+<td>資料範圍</td>
+<td>資料是否落在為欄位定義可接受的範圍內</td>
+<td>分數的數據應介於 0 和 100 之間</td>
+</tr>
+<tr>
+<td>資料約束</td>
+<td>資料是否符合欄位的某些條件或標準</td>
+<td>顧客數量必須為整數</td>
+</tr>
+<tr>
+<td>資料連續</td>
+<td>根據背景判斷資料是否有意義</td>
+<td>產品出貨日期不能早於生產日期</td>
+</tr>
+<tr>
+<td>資料結構</td>
+<td>檢查資料是否符合規定的結構</td>
+<td>網頁資料出現錯誤顯示</td>
+</tr>
+<tr>
+<td>程式檢查</td>
+<td>檢查程式在輸入期間是否出現前述錯誤</td>
+<td>在某些輸入值可能出現異常</td>
+</tr>
+</tbody>
+</table>
+<h3 id="臨時表">臨時表</h3>
+<p>在進行分析前，可以利用 <code>WITH</code> 子句建立臨時的表供之後的分析使用，類似把子查詢的表先建立出來的概念，而結束查詢之後它們會自動從資料庫中刪除。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> table_name <span class="keyword">AS</span>(</span><br><span class="line">  <span class="keyword">SELECT</span></span><br><span class="line">    column_name(s)</span><br><span class="line">  <span class="keyword">FROM</span></span><br><span class="line">    <span class="keyword">table</span></span><br><span class="line">  ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="詞彙">詞彙</h2>
+<ol>
+<li>Data aggregation (資料聚合): The process of gathering data from multiple sources and combining it into a single, summarized collection.</li>
+<li>Subquery (子查詢): A SQL query that is nested inside a larger query</li>
+<li>Temporary table (臨時表): A database table that is created and exists temporarily on a database server.</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Google資料分析課程筆記-5</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2024/07/10/Google資料分析課程筆記-5/">https://douobb.github.io/2024/07/10/Google資料分析課程筆記-5/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2024-07-10</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2024-07-10</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90/">資料分析</a></div><div class="post_share"><div class="social-share" data-image="/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/" title="Google資料分析課程筆記-4"><img class="cover" src="/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Google資料分析課程筆記-4</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/15/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-6/" title="Google資料分析課程筆記-6"><img class="cover" src="/2024/07/15/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-6/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Google資料分析課程筆記-6</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/" title="Google資料分析課程筆記-1"><img class="cover" src="/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-26</div><div class="title">Google資料分析課程筆記-1</div></div></a></div><div><a href="/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/" title="Google資料分析課程筆記-2"><img class="cover" src="/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-28</div><div class="title">Google資料分析課程筆記-2</div></div></a></div><div><a href="/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/" title="Google資料分析課程心得"><img class="cover" src="/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-25</div><div class="title">Google資料分析課程心得</div></div></a></div><div><a href="/2024/06/30/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-3/" title="Google資料分析課程筆記-3"><img class="cover" src="/2024/06/30/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-3/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-30</div><div class="title">Google資料分析課程筆記-3</div></div></a></div><div><a href="/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/" title="Google資料分析課程筆記-4"><img class="cover" src="/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-02</div><div class="title">Google資料分析課程筆記-4</div></div></a></div><div><a href="/2024/07/20/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-7/" title="Google資料分析課程筆記-7"><img class="cover" src="/2024/07/20/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-7/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-20</div><div class="title">Google資料分析課程筆記-7</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Course 5 - Analyze Data to Answer Questions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B0%A1%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">簡介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%A0%E7%AF%80%E5%A4%A7%E7%B6%B1"><span class="toc-number">1.2.</span> <span class="toc-text">章節大綱</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">內容筆記</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#module-1-organize-data-for-more-effective-analysis"><span class="toc-number">2.1.</span> <span class="toc-text">Module 1 - Organize data for more effective analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A9%A6%E7%AE%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">試算表中的排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-%E4%B8%AD%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.2.</span> <span class="toc-text">SQL 中的排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module-2-format-and-adjust-data"><span class="toc-number">2.2.</span> <span class="toc-text">Module 2 - Format and adjust data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A9%A6%E7%AE%97%E8%A1%A8%E8%BD%89%E6%8F%9B%E5%96%AE%E4%BD%8D"><span class="toc-number">2.2.1.</span> <span class="toc-text">試算表轉換單位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-%E5%AD%97%E4%B8%B2%E5%90%88%E4%BD%B5"><span class="toc-number">2.2.2.</span> <span class="toc-text">SQL 字串合併</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module-3-aggregate-data-for-analysis"><span class="toc-number">2.3.</span> <span class="toc-text">Module 3 - Aggregate data for analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#join-%E5%87%BD%E6%95%B8"><span class="toc-number">2.3.1.</span> <span class="toc-text">JOIN 函數</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%A9%A2"><span class="toc-number">2.3.2.</span> <span class="toc-text">子查詢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#having-%E5%AD%90%E5%8F%A5"><span class="toc-number">2.3.3.</span> <span class="toc-text">HAVING 子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module-4-perform-data-calculations"><span class="toc-number">2.4.</span> <span class="toc-text">Module 4 - Perform data calculations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E8%A9%A6%E7%AE%97%E8%A1%A8%E5%87%BD%E6%95%B8"><span class="toc-number">2.4.1.</span> <span class="toc-text">更多試算表函數</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E9%A9%97%E8%AD%89"><span class="toc-number">2.4.2.</span> <span class="toc-text">資料驗證</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%A8%E6%99%82%E8%A1%A8"><span class="toc-number">2.4.3.</span> <span class="toc-text">臨時表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A9%9E%E5%BD%99"><span class="toc-number">2.5.</span> <span class="toc-text">詞彙</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

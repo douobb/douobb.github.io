@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Google資料分析課程筆記-1 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Course 1 - Foundations: Data, Data, Everywhere 簡介 This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google資料分析課程筆記-1">
+<meta property="og:url" content="http://example.com/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="Course 1 - Foundations: Data, Data, Everywhere 簡介 This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes,">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/cover.jpg">
+<meta property="article:published_time" content="2024-06-26T10:20:11.000Z">
+<meta property="article:modified_time" content="2024-06-29T11:37:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="資料分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Google資料分析課程筆記-1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-29 19:37:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/cover.jpg')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Google資料分析課程筆記-1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2024-06-26T10:20:11.000Z" title="發表於 2024-06-26 18:20:11">2024-06-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2024-06-29T11:37:00.000Z" title="更新於 2024-06-29 19:37:00">2024-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B/">線上課程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>8分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Google資料分析課程筆記-1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Course 1 - Foundations: Data, Data, Everywhere</h1>
+<h2 id="簡介">簡介</h2>
+<p>This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes, identify opportunities and trends, launch new products, and make thoughtful decisions. In this course, you’ll be introduced to the world of data analytics through hands-on curriculum developed by Google. The material shared covers plenty of key data analytics.</p>
+<h2 id="章節大綱">章節大綱</h2>
+<ol>
+<li>Introducing data analytics and analytical thinking<br>
+學習資料分析師如何使用各種工具和技能來為日常生活和商業中的決策提供資訊，並且簡單的介紹了本課程的期望。</li>
+<li>The wonderful world of data<br>
+介紹與工作息息相關的資料生命週期以及資料分析過程，並且將其應用到實際的分析之中。</li>
+<li>Set up your data analytics toolbox<br>
+簡介資料分析師工作中常見的試算表、SQL以及資料視覺化工具，並且利用範例來介紹其工作原理。</li>
+<li>Become a fair and impactful data professional<br>
+簡介資料分析師在不同類型的企業中扮演的角色，以及 Google 資料分析證書對於未來求職的幫助。</li>
+</ol>
+<h1>內容筆記</h1>
+<h2 id="module-1-introducing-data-analytics-and-analytical-thinking">Module 1 - Introducing data analytics and analytical thinking</h2>
+<h3 id="資料分析的六個階段">資料分析的六個階段</h3>
+<p>資料分析的流程主要可以分為六個步驟 ask、prepare、process、analyze、share、act，這邊將簡單介紹各個步驟。</p>
+<table>
+<thead>
+<tr>
+<th>階段</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ask</td>
+<td>透過提問來了解要解決的問題，並且充分了解利害關係人 (stakeholder) 的期望，要先了解整個問題才能進入之後的規劃步驟。</td>
+</tr>
+<tr>
+<td>Prepare</td>
+<td>對於專案的流程等細節進行規劃，並且蒐集相關資料，辨別其是否對於資料分析有幫助，在流程種也要確保決策以事實為依據，維持其公平、公正。</td>
+</tr>
+<tr>
+<td>Process</td>
+<td>處理前一步驟蒐集的資料 (清理、合併、刪除異常值…)，並且將其轉換為方便分析的格式。</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>使用試算表、SQL等工具進行資料分析，以找出問題的解決方案。</td>
+</tr>
+<tr>
+<td>Share</td>
+<td>透過簡報或其他資料視覺化工具向決策者展示結果，而在這個階段所使用的媒體非常重要。常見以直覺呈現資料的工具包含 Google Sheets、Tableau 和 R 等。</td>
+</tr>
+<tr>
+<td>Act</td>
+<td>公司將資料分析的結果付諸行動，實施新的業務策略或者其他改變。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="資料分析師的技能">資料分析師的技能</h3>
+<table>
+<thead>
+<tr>
+<th>技能</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curiosity</td>
+<td>可以使分析師以預期或意外的方式從數據中獲得更多資訊，幫助在提問階段獲取更多與目標相關的資料來源。</td>
+</tr>
+<tr>
+<td>Understanding context</td>
+<td>了解要分析的數據背景，可以幫助分析師縮小變數範圍，找到最有可能影響結果的變數，從而得出更有意義的見解。</td>
+</tr>
+<tr>
+<td>Technical mindset</td>
+<td>以系統化並且有邏輯的方式處理問題，將複雜問題分解成為方便處理的一個個小問題。</td>
+</tr>
+<tr>
+<td>Data design</td>
+<td>資料設計技能是技術思維的延伸，主要是關於資訊的組織方式，透過不同的組織資料方式來獲得結論，透過資料設計可以使分析變得更容易，得出更具有洞察力的結果。</td>
+</tr>
+<tr>
+<td>Data strategy</td>
+<td>資料策略主要聚焦於管理層面，管理資料分析中的人員、流程和工具，以及如何進行資源的分配以取得更好的結果。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="module-2-the-wonderful-world-of-data">Module 2 - The wonderful world of data</h2>
+<h3 id="資料的生命週期">資料的生命週期</h3>
+<p>注意這邊的生命週期與前面的資料分析流程是不同的，不同的流程之間不能混用。</p>
+<table>
+<thead>
+<tr>
+<th>週期</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plan</td>
+<td>決定需要什麼類型的資料、如何管理資料、由誰負責。</td>
+</tr>
+<tr>
+<td>Capture</td>
+<td>蒐集或引入來自各種不同來源的數據。</td>
+</tr>
+<tr>
+<td>Manage</td>
+<td>關心和維護資料，確定其儲存方式以及用於儲存的工具。</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>使用數據解決問題、做出決策並支援業務目標。</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td>保存相關數據以供長期和未來參考。</td>
+</tr>
+<tr>
+<td>Destroy</td>
+<td>刪除資料以及任何共用副本。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="常用資料分析工具">常用資料分析工具</h3>
+<ol>
+<li>Spreadsheets 試算表<br>
+常用的有 Microsoft Excel 和 Google Sheets，有以下幾個特點：</li>
+</ol>
+<ul>
+<li>方便 收集、儲存、組織和分類資訊</li>
+<li>識別出規律並整合資料。</li>
+<li>以圖形和圖表進行資料視覺化。</li>
+</ul>
+<ol start="2">
+<li>Databases and query languages 資料庫與查詢語言<br>
+資料庫是儲存在電腦系統中的結構化資料的集合，常見的結構化查詢語言 (SQL) 程式包括 MySQL、Microsoft SQL Server 和 BigQuery，並且它們有以下特點：</li>
+</ol>
+<ul>
+<li>允許分析師從資料庫中分離出特定訊息。</li>
+<li>可以輕鬆地學習並理解對資料庫提出的請求。</li>
+<li>允許分析師從資料庫中選擇、建立、新增或下載資料進行分析。</li>
+</ul>
+<ol start="3">
+<li>視覺化工具<br>
+圖形、地圖、表格、圖表等都是分析師常用的視覺化工具，而 Tableau 和 Looker 是兩種最常使用的視覺化工具，而這些工具具有以下特點：</li>
+</ol>
+<ul>
+<li>將複雜的數字變成人們可以理解的圖表。</li>
+<li>幫助利害關係人得出結論，從而做出明智的決策和有效的業務策略。</li>
+<li>擁有多種功能：
+<ul>
+<li>Tableau 擁有簡單的拖放功能可讓使用者在儀表板中建立互動式圖表。</li>
+<li>Looker 可以與資料庫通信，讓資料直接產生視覺效果。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>工具比較</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>試算表</th>
+<th>資料庫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>透過軟體存取</td>
+<td>使用查詢語言存取資料庫</td>
+</tr>
+<tr>
+<td>行和列格式的結構化數據</td>
+<td>使用規則和關係的結構化數據</td>
+</tr>
+<tr>
+<td>提供對有限數量數據的訪問</td>
+<td>提供對大量數據的訪問</td>
+</tr>
+<tr>
+<td>手動數據輸入</td>
+<td>嚴格一致的資料輸入</td>
+</tr>
+<tr>
+<td>通常一次一個用戶</td>
+<td>多用戶</td>
+</tr>
+<tr>
+<td>由使用者控制</td>
+<td>由資料庫管理系統控制</td>
+</tr>
+</tbody>
+</table>
+<h2 id="module-3-set-up-your-data-analytics-toolbox">Module 3 - Set up your data analytics toolbox</h2>
+<h3 id="sql-查詢語法">SQL 查詢語法</h3>
+<ol>
+<li>SELECT<br>
+選擇要檢索的 columns (欄)，如果要取多個欄可以使用逗號隔開。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	customer_id,</span><br><span class="line">	first_name,</span><br><span class="line">	last_name</span><br></pre></td></tr></table></figure>
+<p>而如果在 SELECT 後面加上一個 <code>*</code> 代表選擇表內的所有欄位，在較大的表中需要謹慎使用。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>FROM<br>
+選擇資料所在的 table (表)，表示方法為 <code>dataset_name.table_name</code> (資料集名稱和表的名稱用一個點隔開)。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> customer_data.customer_name</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>WHERE<br>
+用來篩選資料的條件，和 SELECT 不同，條件之間可以用 AND、OR、NOT 等運算符連接，以表達想要使用的條件。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	customer_id <span class="operator">&gt;</span> <span class="number">0</span></span><br><span class="line">	<span class="keyword">AND</span> first_name <span class="operator">=</span> <span class="string">&#x27;Tony&#x27;</span></span><br><span class="line">	<span class="keyword">AND</span> last_name <span class="operator">=</span> <span class="string">&#x27;Magnolia&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>如果要使用條件來篩選出特定的名字，我們可以這樣寫：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;Chavez&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>但是如果要找到特定開頭的名字的話，必須使用 <code>LIKE</code> 來幫助篩選，範例中可以篩選出所有以 “Ch” 開頭的名字，而其中的 % 符號則代表一個或多個字元 (有的語言以 <code>*</code> 作為代表)。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;Ch%&#x27;</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>註解<br>
+註解的寫法有兩種，分別是單行註解 --以及多行註解 /* */，可以讓程式更好理解。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 單行註解</span></span><br><span class="line"><span class="comment">/* 多行</span></span><br><span class="line"><span class="comment">註解*/</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>別名<br>
+在 SELECT 和 FROM 兩個區塊選擇資料範圍時，可以使用 <code>AS</code> 加上資料的別名，方便之後使用。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	my_table_alias.actual_column_name <span class="keyword">AS</span> my_column_alias</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	actual_table_name <span class="keyword">AS</span> my_table_alias</span><br></pre></td></tr></table></figure>
+<h2 id="module-4-become-a-fair-and-impactful-data-professional">Module 4 - Become a fair and impactful data professional</h2>
+<h3 id="確保公平性">確保公平性</h3>
+<p>資料專業人員有責任確保他們所做的分析是公平的，意味著確保分析不會產生甚至是加深偏見，如果分析不客觀，可能會產生誤導或有害的結論，而課程中提供了幾個策略以確保分析的公平性：</p>
+<table>
+<thead>
+<tr>
+<th>策略<div style="width:150px"></th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>考慮所有可用數據</td>
+<td>資料分析時必須確定哪些資料對分析有用，而遇到某些與關注內容無關或與期望不符的數據時，不應該直接捨棄，才能使分析結果反映事實。</td>
+</tr>
+<tr>
+<td>辨別周圍因素</td>
+<td>之前有提到過了解背景是資料分析師的重要技能，對於分析的最終結論至關重要，因此與考慮所有可用數據類似，還必須了解可能影響分析結果的的周圍因素。</td>
+</tr>
+<tr>
+<td>使用自我報告的數據</td>
+<td>自我報告是一種資料收集技術，使用問卷或訪談等方式，讓參與者在無干擾的情況下提供有關自己的資訊，可以避免人們對他人的偏見。</td>
+</tr>
+<tr>
+<td>善用&quot;過採樣&quot;</td>
+<td>過採樣是增加總體中非主導群體樣本的過程，增加部分數據的採樣數量，增加資料的公平性。</td>
+</tr>
+<tr>
+<td>確保資料始終公平</td>
+<td>確保從專案的最初到分析出結果並採取行動時都是公平的，也代表資料在收集、清理、處理和分析都是在公平的情況下進行。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="詞彙">詞彙</h2>
+<ol>
+<li>Attribute (屬性): A characteristic or quality of data used to label a column in a table.</li>
+<li>Context (情境、背景): The condition in which something exists or happens.</li>
+<li>Formula (公式): A set of instructions used to perform a calculation using the data in a spreadsheet.</li>
+<li>Function (函數): A preset command that automatically performs a specified process or task using the data in a spreadsheet.</li>
+<li>Gap analysis (差距分析): A method for examining and evaluating the current state of a process in order to identify opportunities for improvement in the future.</li>
+<li>Oversampling (過採樣): The process of increasing the sample size of nondominant groups in a population. This can help you better represent them and address imbalanced datasets.</li>
+<li>Self - reporting (自我報告): A data collection technique where participants provide information about themselves.</li>
+<li>Stakeholders (利害關係人): People who invest time and resources into a project and are interested in its outcome.</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Google資料分析課程筆記-1</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2024/06/26/Google資料分析課程筆記-1/">https://douobb.github.io/2024/06/26/Google資料分析課程筆記-1/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2024-06-26</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2024-06-29</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90/">資料分析</a></div><div class="post_share"><div class="social-share" data-image="/2024/06/26/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-1/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/16/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-%E4%BA%8C%E5%88%86%E6%90%9C%E5%B0%8B/" title="演算法筆記-二分搜尋"><img class="cover" src="/2024/06/16/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-%E4%BA%8C%E5%88%86%E6%90%9C%E5%B0%8B/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">演算法筆記-二分搜尋</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/" title="Google資料分析課程筆記-2"><img class="cover" src="/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Google資料分析課程筆記-2</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/" title="Google資料分析課程筆記-2"><img class="cover" src="/2024/06/28/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-2/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-28</div><div class="title">Google資料分析課程筆記-2</div></div></a></div><div><a href="/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/" title="Google資料分析課程心得"><img class="cover" src="/2024/07/25/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-25</div><div class="title">Google資料分析課程心得</div></div></a></div><div><a href="/2024/06/30/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-3/" title="Google資料分析課程筆記-3"><img class="cover" src="/2024/06/30/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-3/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-30</div><div class="title">Google資料分析課程筆記-3</div></div></a></div><div><a href="/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/" title="Google資料分析課程筆記-5"><img class="cover" src="/2024/07/10/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-5/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-10</div><div class="title">Google資料分析課程筆記-5</div></div></a></div><div><a href="/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/" title="Google資料分析課程筆記-4"><img class="cover" src="/2024/07/02/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-4/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-02</div><div class="title">Google資料分析課程筆記-4</div></div></a></div><div><a href="/2024/07/20/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-7/" title="Google資料分析課程筆記-7"><img class="cover" src="/2024/07/20/Google%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98-7/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-20</div><div class="title">Google資料分析課程筆記-7</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Course 1 - Foundations: Data, Data, Everywhere</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B0%A1%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">簡介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%A0%E7%AF%80%E5%A4%A7%E7%B6%B1"><span class="toc-number">1.2.</span> <span class="toc-text">章節大綱</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">內容筆記</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#module-1-introducing-data-analytics-and-analytical-thinking"><span class="toc-number">2.1.</span> <span class="toc-text">Module 1 - Introducing data analytics and analytical thinking</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AD%E5%80%8B%E9%9A%8E%E6%AE%B5"><span class="toc-number">2.1.1.</span> <span class="toc-text">資料分析的六個階段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E5%B8%AB%E7%9A%84%E6%8A%80%E8%83%BD"><span class="toc-number">2.1.2.</span> <span class="toc-text">資料分析師的技能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module-2-the-wonderful-world-of-data"><span class="toc-number">2.2.</span> <span class="toc-text">Module 2 - The wonderful world of data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E7%9A%84%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="toc-number">2.2.1.</span> <span class="toc-text">資料的生命週期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7"><span class="toc-number">2.2.2.</span> <span class="toc-text">常用資料分析工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module-3-set-up-your-data-analytics-toolbox"><span class="toc-number">2.3.</span> <span class="toc-text">Module 3 - Set up your data analytics toolbox</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-%E6%9F%A5%E8%A9%A2%E8%AA%9E%E6%B3%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">SQL 查詢語法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module-4-become-a-fair-and-impactful-data-professional"><span class="toc-number">2.4.</span> <span class="toc-text">Module 4 - Become a fair and impactful data professional</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%BA%E4%BF%9D%E5%85%AC%E5%B9%B3%E6%80%A7"><span class="toc-number">2.4.1.</span> <span class="toc-text">確保公平性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A9%9E%E5%BD%99"><span class="toc-number">2.5.</span> <span class="toc-text">詞彙</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
