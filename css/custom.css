@@ -455,7 +455,7 @@ h6::before {
 /* 文章標題置中 */
 #post-info{
   width: fit-content;
-  top: 55%;
+  top: 55%; /* 可微調上下 */
   transform: translateY(-50%);
 }
 h1.post-title{
