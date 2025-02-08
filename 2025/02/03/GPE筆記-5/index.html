@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>GPE筆記-5 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大概刷了 50 題左右 GPE Helper 上面比較常出現的題目，根據題目類型分類做一些筆記，方便之後複習。 本篇主題大多與數學相關。  數學     Problem UVA     22151 Big Mod 374   10559 I Love Big Numbers ! 10220   10422 Is This Integration 10209   10559 10675 Urn-ba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GPE筆記-5">
+<meta property="og:url" content="http://example.com/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="大概刷了 50 題左右 GPE Helper 上面比較常出現的題目，根據題目類型分類做一些筆記，方便之後複習。 本篇主題大多與數學相關。  數學     Problem UVA     22151 Big Mod 374   10559 I Love Big Numbers ! 10220   10422 Is This Integration 10209   10559 10675 Urn-ba">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/cover.png">
+<meta property="article:published_time" content="2025-02-03T11:17:27.000Z">
+<meta property="article:modified_time" content="2025-02-07T12:02:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="演算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'GPE筆記-5',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-07 20:02:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/cover.png')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">GPE筆記-5</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2025-02-03T11:17:27.000Z" title="發表於 2025-02-03 19:17:27">2025-02-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2025-02-07T12:02:00.000Z" title="更新於 2025-02-07 20:02:00">2025-02-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E8%B3%87%E5%B7%A5/">資工</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>7分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="GPE筆記-5"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>大概刷了 50 題左右 <a target="_blank" rel="noopener" href="https://gpe-helper.setsal.dev/">GPE Helper</a> 上面比較常出現的題目，根據題目類型分類做一些筆記，方便之後複習。</p>
+<div class="note primary flat"><p>本篇主題大多與數學相關。</p>
+</div>
+<mark class="hl-label default">數學</mark> 
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>UVA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22151 Big Mod</td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-374">374</a></td>
+</tr>
+<tr>
+<td>10559 I Love Big Numbers !</td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10220">10220</a></td>
+</tr>
+<tr>
+<td>10422 Is This Integration</td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10209">10209</a></td>
+</tr>
+<tr>
+<td>10559 10675 Urn-ball Probabilities!</td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10169">10169</a></td>
+</tr>
+<tr>
+<td>23661 Bit Mask</td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10718">10718</a></td>
+</tr>
+<tr>
+<td>10414 Bangla Numbers</td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10101">10101</a></td>
+</tr>
+</tbody>
+</table>
+<h1>數學相關</h1>
+<h2 id="big-mod">Big Mod</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-374">UVA 374</a></p>
+</blockquote>
+<mark class="hl-label default">題目大意</mark> 
+<p>根據輸入的數字 <code>B, P, M</code> 求 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mi>P</mi></msup><mi>m</mi><mi>o</mi><mi>d</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">B^P mod M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span></span></span></span></span><span class="mord mathdefault">m</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span>。</p>
+<mark class="hl-label default">解題方法</mark> 
+<p>快速冪的計算方式加上 <code>mod</code>。</p>
+<mark class="hl-label default">注意事項</mark> 
+<ul>
+<li>快速冪函數的參數 <code>b</code> 應該改為 <code>b % m</code> 避免計算時超出 <code>int</code> 範圍。</li>
+</ul>
+<mark class="hl-label default">程式碼</mark> 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> b, <span class="type">int</span> p, <span class="type">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(p == <span class="number">1</span>) <span class="keyword">return</span> b % m;</span><br><span class="line">    <span class="type">int</span> t = <span class="built_in">f</span>(b, p / <span class="number">2</span>, m), tt = (t * t) % m;</span><br><span class="line">    <span class="keyword">if</span>(p % <span class="number">2</span> == <span class="number">0</span>) <span class="keyword">return</span> tt;</span><br><span class="line">    <span class="keyword">return</span> (tt * b) % m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> b, p, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; b &gt;&gt; p &gt;&gt; m)&#123;</span><br><span class="line">        cout &lt;&lt; <span class="built_in">f</span>(b % m, p, m) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="i-love-big-numbers">I Love Big Numbers !</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10220">UVA 10220</a></p>
+</blockquote>
+<mark class="hl-label default">題目大意</mark> 
+<p>根據輸入的數字 <code>n</code>，求 <code>n!</code> 的各位數字和。</p>
+<mark class="hl-label default">解題方法</mark> 
+<p>因為題目的 <code>n</code> 最大只到 1000，因此可以提前建表，利用一個陣列儲存每一位數字，並利用大數運算的方式逐漸乘上去，每乘一次就紀錄各位數字和。</p>
+<mark class="hl-label default">注意事項</mark> 
+<ul>
+<li>陣列大小要開夠，並且初始值為 <code>1</code>。</li>
+</ul>
+<mark class="hl-label default">程式碼</mark> 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">v</span>(<span class="number">1001</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">3001</span>, <span class="number">0</span>));</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(<span class="number">1001</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    v[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">3000</span>; j++)&#123;</span><br><span class="line">            v[i][j] = v[i - <span class="number">1</span>][j] * i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3000</span>; j++)&#123;</span><br><span class="line">            v[i][j + <span class="number">1</span>] += v[i][j] / <span class="number">10</span>;</span><br><span class="line">            v[i][j] %= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">3000</span>; j++)&#123;</span><br><span class="line">            ans[i] += v[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n)&#123;</span><br><span class="line">        cout &lt;&lt; ans[n] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="is-this-integration">Is This Integration</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10209">UVA 10209</a></p>
+</blockquote>
+<mark class="hl-label default">題目大意</mark> 
+<p>根據輸入的數字 <code>a</code> 作為邊長，求正方形分割各區塊的面積。</p>
+<mark class="hl-label default">解題方法</mark> 
+<ul>
+<li><code>z</code> 的面積是正方形減去正三角形以及兩個 <code>1/12</code> 圓， 且網狀線背景區域面積為 <code>4z</code>。</li>
+<li><code>y</code> 的面積是正方形減去 <code>1/4</code> 圓以及兩個 <code>z</code>，且點狀背景區域面積為 <code>4y</code></li>
+<li>斜線背景面積為正方形減去 <code>(4y + 4z)</code>。</li>
+</ul>
+<img src="/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/10422.png" class="" title="分割">
+<mark class="hl-label default">注意事項</mark> 
+<ul>
+<li><code>pi</code> 的數值多位一點比較精準。</li>
+</ul>
+<mark class="hl-label default">程式碼</mark> 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">double</span> pi = <span class="number">3.141592653589793</span>, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n)&#123;</span><br><span class="line">        <span class="type">double</span> z = n * n * (<span class="number">1</span> - <span class="built_in">sqrt</span>(<span class="number">3</span>) / <span class="number">4</span> - pi / <span class="number">6</span>);</span><br><span class="line">        <span class="type">double</span> y = n * n * (<span class="number">1</span> - pi / <span class="number">4</span>) - <span class="number">2</span> * z;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%.3f %.3f %.3f\n&quot;</span>, n * n - <span class="number">4</span> * y - <span class="number">4</span> * z, <span class="number">4</span> * y, <span class="number">4</span> * z);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="urn-ball-probabilities">Urn-ball Probabilities!</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10169">UVA 10169</a></p>
+</blockquote>
+<mark class="hl-label default">題目大意</mark> 
+<p>有兩個罐子，其中一個有一顆紅球，另一個有一顆紅球與白球，每次各從兩個罐子中取出一顆球並放回，並且加入一顆白球，輸入一個數字 <code>n</code>，求出 <code>n</code> 次操作中至少有一次取出兩個紅球的機率，以及連續 <code>n</code> 次都取出兩個紅球的機率小數點後有幾個 <code>0</code>。</p>
+<mark class="hl-label default">解題方法</mark> 
+<ul>
+<li>建立一個陣列 <code>v</code> 儲存 <code>n</code> 次操作中至少有一次取出兩個紅球的機率，可以知道 <code>v[i] = v[i - 1] + (1 - v[i - 1]) / (i * (i + 1))</code>。</li>
+<li>建立一個陣列 <code>d</code> 儲存連續 <code>n</code> 次都取出兩個紅球的機率小數點後有幾個 <code>0</code>，因為小數點後 0 的個數應該是 <code>-log(k_n))</code> 的整數部分 (k_n 為連續 <code>n</code> 次都取出兩個紅球的機率)，<code>k_n = k_(n - 1) * 1 / (i * (i + 1))</code>，把 log 外的負號放進去並且分解，就能得到 <code>d[i] = d[i - 1] + log10(i * (i + 1))</code>。</li>
+</ul>
+<mark class="hl-label default">注意事項</mark> 
+<ul>
+<li>變數 <code>i</code> 用 <code>double</code> 避免精度誤差。</li>
+<li>注意題目要求的輸出格式。</li>
+</ul>
+<mark class="hl-label default">程式碼</mark> 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">v</span><span class="params">(<span class="number">1000001</span>, <span class="number">0</span>)</span>, <span class="title">d</span><span class="params">(<span class="number">1000001</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">double</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++)&#123; <span class="comment">//i 用 double</span></span><br><span class="line">        v[i] = v[i - <span class="number">1</span>] + (<span class="number">1</span> - v[i - <span class="number">1</span>]) / (i * (i + <span class="number">1</span>));</span><br><span class="line">        d[i] = d[i - <span class="number">1</span>] + <span class="built_in">log10</span>(i * (i + <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%.6f %d\n&quot;</span>, v[n], (<span class="type">int</span>)d[n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="bit-mask">Bit Mask</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10718">UVA 10718</a></p>
+</blockquote>
+<mark class="hl-label default">題目大意</mark> 
+<p>輸入為三個 <code>32 bit</code> 的 <code>unsigned integers</code> <code>N, L, U</code>，求出 <code>M</code> 滿足 <code>L &lt;= M &lt;= U</code> 且使得 <code>N or M</code> 為最大值，如果有多個 <code>M</code> 滿足該條件則傳回最小的。</p>
+<mark class="hl-label default">解題方法</mark> 
+<p>由 <code>32 bit</code> 的最高位開始檢查，如果 <code>N</code> 在此位置為 <code>1</code> 則 <code>M</code> 在此位可以為 <code>0 or 1</code>，為了避免 <code>M &lt; L</code> 超出邊界，必須要檢查 <code>如果 M 在此位以後都為 1 是否能滿足 M &gt;= L</code>。如果 <code>N</code> 在此位置為 <code>0</code>，則要盡可能的使 <code>M</code> 在此位置為 <code>1</code>，因此要檢查 <code>當 M 在此位置為 1 時是否滿足 M &lt;= U</code>。</p>
+<mark class="hl-label default">注意事項</mark> 
+<ul>
+<li><code>(long long)1 &lt;&lt; i</code> 前面將 <code>1</code> 轉為 <code>long long</code> 是因為位移之後可能會超過 <code>int</code> 範圍。</li>
+</ul>
+<mark class="hl-label default">程式碼</mark> 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n, l, u;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n &gt;&gt; l &gt;&gt; u)&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i = <span class="number">31</span>; i &gt;= <span class="number">0</span>; i--)&#123; <span class="comment">//由最高位往低位檢查</span></span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> t = ((<span class="type">long</span> <span class="type">long</span>)<span class="number">1</span> &lt;&lt; i), k = (m | t);</span><br><span class="line">            <span class="keyword">if</span>((n &amp; t))&#123; <span class="comment">// n 此位為 1</span></span><br><span class="line">                <span class="keyword">if</span>(m + t - <span class="number">1</span> &lt; l) m = k; <span class="comment">//是否大於下界</span></span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(k &lt;= u) m = k; <span class="comment">// 是否小於上界</span></span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; m &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="bangla-numbers">Bangla Numbers</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10101">UVA 10101</a></p>
+</blockquote>
+<mark class="hl-label default">題目大意</mark> 
+<p>將輸入的數字轉換為某種特殊的文字形式。</p>
+<mark class="hl-label default">解題方法</mark> 
+<p>根據四個單位的大小，遞迴處理數字。</p>
+<mark class="hl-label default">注意事項</mark> 
+<ul>
+<li>當數字為 <code>0</code> 時，需要輸出 <code>0</code>。</li>
+</ul>
+<mark class="hl-label default">程式碼</mark> 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">long</span> <span class="type">long</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n / <span class="number">10000000</span>)&#123;</span><br><span class="line">        <span class="built_in">solve</span>(n / <span class="number">10000000</span>);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot; kuti&quot;</span>;</span><br><span class="line">        n %= <span class="number">10000000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n / <span class="number">100000</span>)&#123;</span><br><span class="line">        <span class="built_in">solve</span>(n / <span class="number">100000</span>);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot; lakh&quot;</span>;</span><br><span class="line">        n %= <span class="number">100000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n / <span class="number">1000</span>)&#123;</span><br><span class="line">        <span class="built_in">solve</span>(n / <span class="number">1000</span>);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot; hajar&quot;</span>;</span><br><span class="line">        n %= <span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n / <span class="number">100</span>)&#123;</span><br><span class="line">        <span class="built_in">solve</span>(n / <span class="number">100</span>);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot; shata&quot;</span>;</span><br><span class="line">        n %= <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n)&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n, c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n)&#123;</span><br><span class="line">        c++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d.&quot;</span>, c);</span><br><span class="line">        <span class="keyword">if</span>(n) <span class="built_in">solve</span>(n);</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot; 0&quot;</span>;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>GPE筆記-5</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2025/02/03/GPE筆記-5/">https://douobb.github.io/2025/02/03/GPE筆記-5/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2025-02-03</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2025-02-07</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%BC%94%E7%AE%97%E6%B3%95/">演算法</a></div><div class="post_share"><div class="social-share" data-image="/2025/02/03/GPE%E7%AD%86%E8%A8%98-5/cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2025/01/28/GPE%E7%AD%86%E8%A8%98-4/" title="GPE筆記-4"><img class="cover" src="/2025/01/28/GPE%E7%AD%86%E8%A8%98-4/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">GPE筆記-4</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2025/01/24/GPE%E7%AD%86%E8%A8%98-1/" title="GPE筆記-1"><img class="cover" src="/2025/01/24/GPE%E7%AD%86%E8%A8%98-1/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-24</div><div class="title">GPE筆記-1</div></div></a></div><div><a href="/2025/01/27/GPE%E7%AD%86%E8%A8%98-3/" title="GPE筆記-3"><img class="cover" src="/2025/01/27/GPE%E7%AD%86%E8%A8%98-3/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-27</div><div class="title">GPE筆記-3</div></div></a></div><div><a href="/2025/01/28/GPE%E7%AD%86%E8%A8%98-4/" title="GPE筆記-4"><img class="cover" src="/2025/01/28/GPE%E7%AD%86%E8%A8%98-4/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-28</div><div class="title">GPE筆記-4</div></div></a></div><div><a href="/2025/01/26/GPE%E7%AD%86%E8%A8%98-2/" title="GPE筆記-2"><img class="cover" src="/2025/01/26/GPE%E7%AD%86%E8%A8%98-2/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-26</div><div class="title">GPE筆記-2</div></div></a></div><div><a href="/2024/05/15/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-3/" title="演算法筆記-3"><img class="cover" src="/2024/05/15/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-3/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-15</div><div class="title">演算法筆記-3</div></div></a></div><div><a href="/2024/05/07/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-2/" title="演算法筆記-2"><img class="cover" src="/2024/05/07/%E6%BC%94%E7%AE%97%E6%B3%95%E7%AD%86%E8%A8%98-2/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-07</div><div class="title">演算法筆記-2</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">數學相關</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#big-mod"><span class="toc-number">1.1.</span> <span class="toc-text">Big Mod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#i-love-big-numbers"><span class="toc-number">1.2.</span> <span class="toc-text">I Love Big Numbers !</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#is-this-integration"><span class="toc-number">1.3.</span> <span class="toc-text">Is This Integration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#urn-ball-probabilities"><span class="toc-number">1.4.</span> <span class="toc-text">Urn-ball Probabilities!</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bit-mask"><span class="toc-number">1.5.</span> <span class="toc-text">Bit Mask</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bangla-numbers"><span class="toc-number">1.6.</span> <span class="toc-text">Bangla Numbers</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
