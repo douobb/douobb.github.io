@@ -1,0 +1,830 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>通訊原理筆記-L10 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="L10 Existing Wireless Systems History of Mobile Telecommunication Systems  1G  1980 年代初 Analog communication technique (類比) Cell 範圍大，頻譜利用率低 行動裝置尺寸大   2G  1990 年代初 Digital communication technology (數位)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通訊原理筆記-L10">
+<meta property="og:url" content="http://example.com/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="L10 Existing Wireless Systems History of Mobile Telecommunication Systems  1G  1980 年代初 Analog communication technique (類比) Cell 範圍大，頻譜利用率低 行動裝置尺寸大   2G  1990 年代初 Digital communication technology (數位)">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/cover.png">
+<meta property="article:published_time" content="2025-05-14T07:25:00.000Z">
+<meta property="article:modified_time" content="2025-05-14T07:25:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="通訊原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '通訊原理筆記-L10',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-05-14 15:25:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/cover.png')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">通訊原理筆記-L10</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2025-05-14T07:25:00.000Z" title="發表於 2025-05-14 15:25:00">2025-05-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2025-05-14T07:25:00.000Z" title="更新於 2025-05-14 15:25:00">2025-05-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E8%B3%87%E5%B7%A5/">資工</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>9分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="通訊原理筆記-L10"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>L10 Existing Wireless Systems</h1>
+<h2 id="history-of-mobile-telecommunication-systems">History of Mobile Telecommunication Systems</h2>
+<ul>
+<li>1G
+<ul>
+<li>1980 年代初</li>
+<li>Analog communication technique (類比)</li>
+<li>Cell 範圍大，頻譜利用率低</li>
+<li>行動裝置尺寸大</li>
+</ul>
+</li>
+<li>2G
+<ul>
+<li>1990 年代初</li>
+<li>Digital communication technology (數位)</li>
+<li>更好的頻譜利用率，裝置價格較低</li>
+<li>初始支援音訊，後來加入 short message service (SMS)</li>
+<li>系統:
+<ul>
+<li><code>GSM</code> (Global System for Mobile Communications) - 歐洲</li>
+<li><code>IS-95</code> (cdma-One) - 高通所設計</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.5G
+<ul>
+<li>網路開始發展，有傳送資料的需求</li>
+<li><code>GPRS</code> (General Packet Radio Service) 搭配 GSM</li>
+<li><code>IS-95B</code> 搭配 IS-95</li>
+</ul>
+</li>
+<li>3G
+<ul>
+<li>2000 年後</li>
+<li>網路需要更大的 data rates</li>
+<li>系統:
+<ul>
+<li><code>UMTS</code> (Universal Mobile Telecommunication System)
+<ul>
+<li>developed from GSM</li>
+<li>修改 air interface 的技術 -&gt; 與 2G 不相容 (無線部分)</li>
+</ul>
+</li>
+<li><code>cdma2000</code>
+<ul>
+<li>developed from IS-95</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4G
+<ul>
+<li>應對 Mobile Data 不斷增加</li>
+<li>改變:
+<ul>
+<li>Cell 範圍縮小</li>
+<li>頻寬增加</li>
+<li>改進通訊技術</li>
+<li>降低成本</li>
+<li>降低 end-to-end delay</li>
+<li>提高性能</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3g-中的不同系統">3G 中的不同系統</h3>
+<ul>
+<li>UMTS - UMTS air interface has two slightly different implementations
+<ul>
+<li><code>WCDMA</code> (Wideband Code Division Multiple Access)
+<ul>
+<li>Segregation of forward and reverse transmissions: <code>FDD</code></li>
+<li>Bandwidth: 5 MHz</li>
+</ul>
+</li>
+<li><code>TD-SCDMA</code> (Time Division Synchronous Code Division Multiple Access) - 中國
+<ul>
+<li>Segregation of forward and reverse transmissions: <code>TDD</code></li>
+<li>Bandwidth: 1.6 MHz</li>
+</ul>
+</li>
+<li>不兼容 GSM</li>
+<li>Voice and data segregation 使用相同頻率</li>
+</ul>
+</li>
+<li>cdma2000
+<ul>
+<li>Bandwidth: 1.25 MHz</li>
+<li>兼容 IS-95</li>
+<li>Voice and data segregation 使用不同頻率</li>
+</ul>
+</li>
+</ul>
+<h2 id="advanced-mobile-phone-system-amps">Advanced Mobile Phone System (AMPS)</h2>
+<blockquote>
+<p>美國的第一代 (1G) 蜂巢式行動通訊系統</p>
+</blockquote>
+<ul>
+<li>Created by AT&amp;T Bell Labs</li>
+<li>Speech signals: FM</li>
+<li>Control information: FSK</li>
+<li>7 cells form a cluster</li>
+<li>Allow <code>cell sectoring</code> and <code>cell splitting</code></li>
+<li>FDD
+<ul>
+<li>Frequency band from MSs to BS: 824 MHz ~ 849 MHz</li>
+<li>Frequency band from BS to MSs: 869MHz ~ 894 MHz</li>
+</ul>
+</li>
+<li>使用 <code>Manchester frequency modulation</code> 在 <code>10 kbps</code> 的頻率下傳輸資料
+<ul>
+<li>Manchester encoding:</li>
+</ul>
+  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Manchester.png" class="" title="Manchester">
+</li>
+<li>使用定向傳播避免干擾 (cell sectoring and cell splitting)</li>
+<li>Identification Numbers:
+<ul>
+<li><code>ESN</code> (Electronic serial number)
+<ul>
+<li>唯一識別每個 MS</li>
+<li>製造商在出廠時設定</li>
+<li>不可修改，每部 MS 必須具備此編號</li>
+</ul>
+</li>
+<li><code>SID</code> (System identification number)
+<ul>
+<li>cellular system 的編號</li>
+<li>MS 在服務區域註冊時使用</li>
+<li>MS 要先傳送 SID 之後才能建立通話連線</li>
+</ul>
+</li>
+<li><code>MIN</code> (Mobile identification number)
+<ul>
+<li>MS 的 10 位數電話號碼的數位表示</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="control-channels">Control Channels</h3>
+<ul>
+<li><code>FOCC</code> (Forward control channel)
+<ul>
+<li>BS -&gt; MS</li>
+<li>用於 <code>Paging (尋呼)</code> 以及定位 MS</li>
+<li><code>Continuous data stream</code> (連續的資料流)</li>
+<li>Control information is through <code>3-way time division multiplexing</code> mode:
+<ul>
+<li>Stream A: MS 的 MIN least significant bit (LSB) 為 0</li>
+<li>Stream B: MS 的 MIN least significant bit (LSB) 為 1</li>
+</ul>
+</li>
+<li><code>RECC busy/idle bits</code>
+<ul>
+<li>告知 MS 目前 RECC 的狀態 (是否有人使用)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>RECC</code> (Reverse control channel)
+<ul>
+<li>MS -&gt; BS</li>
+<li><code>Discontinuous and contention channel</code> (不連續的競爭通道)
+<ul>
+<li>Discontinuous: 只在需要時才使用 RECC</li>
+<li>contention: 多個 MS 可能同時嘗試使用，可能發生碰撞</li>
+</ul>
+</li>
+<li>使用原因
+<ul>
+<li>Paging/query response (回應)</li>
+<li>MSs make origination calls (主動發起通話)</li>
+</ul>
+</li>
+<li>搭配 <code>DCC</code> 避免 co-channel interference
+<ul>
+<li>DCC (Digital Color Code) - 標識和區分不同的通訊群組避免干擾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="voice-channels">Voice Channels</h3>
+<ul>
+<li><code>FVC</code> (Forward Voice Channel)
+<ul>
+<li>BS -&gt; MS</li>
+<li>一對一的傳輸，且訊息量有限制</li>
+<li>supports two tones:
+<ul>
+<li><code>SAT</code> (Continuous supervisory audio): 確保傳輸質量
+<ul>
+<li>BS 傳送資料給 MS 時加入 SAT，之後 MS 再將其回傳給 BS</li>
+<li>回傳時可能加上 <code>Signalling Tone (ST)</code> 用來確認基地台發送的命令</li>
+<li>BS 比對回傳的 SAT 可以檢測路徑中的 noise</li>
+<li>決定是否進行 Handoff 或 Call Release</li>
+<li>決定是否接受 Signalling Tone</li>
+</ul>
+</li>
+<li><code>Discontinuous data stream</code>: 分配或調整 voice channel</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>RVC</code> (Reverse Voice Channel)
+<ul>
+<li>MS -&gt; BS</li>
+<li>一對一傳輸</li>
+<li>Continuous supervisory audio tone: 偵測干擾 (SAT)</li>
+<li>Discontinuous data: 確認 (ST)</li>
+</ul>
+</li>
+</ul>
+<h3 id="initialization-call-origination">Initialization &amp; Call Origination</h3>
+<ul>
+<li>
+<p>Initialization:</p>
+  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Initialization.png" class="" title="Initialization">
+</li>
+<li>
+<p>Call Origination:</p>
+  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Call-Origination.png" class="" title="Call-Origination">
+</li>
+<li>
+<p>IS-41</p>
+<ul>
+<li>允許在不同 MSC 控制的 BS 間進行 <code>handoff</code></li>
+<li>允許 MS <code>roaming (漫遊)</code> 至 home system 以外</li>
+<li>defines the call origination, call delivery, and terminal registration</li>
+<li>Registration 過程的訊號交換對象
+<ul>
+<li>新 Serving MSC - 關聯的資料庫 (VLR)</li>
+<li>新 database (VLR) - HLR</li>
+<li>HLR - 舊的 VLR / Serving MSC</li>
+</ul>
+</li>
+<li>Registration 流程:  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/IS-41-Registration.png" class="" title="IS-41-Registration">
+</li>
+</ul>
+</li>
+<li>
+<p>Interworking of IS-41 and AMPS</p>
+  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/IS-41.png" class="" title="IS-41">
+</li>
+</ul>
+<h2 id="gsm">GSM</h2>
+<blockquote>
+<p>第二代（2G）行動通訊系統</p>
+</blockquote>
+<ul>
+<li>目標: 打破各國系統不相容問題，實現全球漫遊</li>
+<li>支援:
+<ul>
+<li>語音傳輸</li>
+<li>數據傳輸</li>
+<li>緊急通話</li>
+</ul>
+</li>
+<li>Infrastructure  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Infrastructure.png" class="" title="Infrastructure">
+</li>
+<li>Structure of GSM network  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Structure.png" class="" title="Structure">
+</li>
+<li>利用 <code>FDMA</code>
+<ul>
+<li>最多同時服務 124 個 MS</li>
+</ul>
+  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/GSM-FDMA.png" class="" title="GSM-FDMA">
+</li>
+</ul>
+<h3 id="channels">Channels</h3>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/GSM-channels.png" class="" title="GSM-channels">
+<ul>
+<li>Broadcast channels
+<ul>
+<li><code>BCCH</code>: 廣播系統參數 (ex: frequency, operator identifier)</li>
+<li><code>FCCH</code>: 提供頻率參考與校正訊號 (MS 對齊 BS 的頻率)</li>
+<li><code>SCH</code>: 提供時間同步訊號 (MS 同步至 BTS 的 TDMA 架構)</li>
+</ul>
+</li>
+<li>Link establishment and ongoing call management
+<ul>
+<li><code>RACH</code>: 請求與網路建立連線 (initiates a call or responds to a page)</li>
+<li><code>PCH</code>: BS 與單一 MS 通信 (BTS page MS)</li>
+<li><code>AGCH</code>: 授權通道與時序資訊</li>
+</ul>
+</li>
+<li>Dedicated control channels
+<ul>
+<li><code>SACCH</code>:
+<ul>
+<li>與使用者通道同時配置，用於持續傳送背景控制資訊</li>
+<li>BS -&gt; MS: power control and timing information</li>
+<li>MS -&gt; BS: RSSI/link quality report</li>
+</ul>
+</li>
+<li><code>SDCCH</code>:
+<ul>
+<li>與 SACCH 同時配置，負責訊號傳輸</li>
+<li>Call Setup</li>
+<li>Authentication</li>
+<li>Location Update</li>
+<li>SMS point to point use</li>
+</ul>
+</li>
+<li><code>FACCH</code>:
+<ul>
+<li>不是獨立通道，是 traffic channel 的一部分</li>
+<li>傳誦與 SDCCH 相同的資料</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Channel combination:
+<ul>
+<li>頻道由 <code>logical channels</code> 組成</li>
+<li>ex:
+<ul>
+<li>(i) TCH/F+FACCH/F+SACCH/TF</li>
+<li>(ii) TCH/H(0,1)+FACCH/H (0,1)+SACCH/TH(0,1)</li>
+<li>(iii) TCH/H(0)+FACCH/H (0)+SACCH/TH(1)</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="frames">Frames</h3>
+<ul>
+<li>Frames in GSM - 利用 <code>TDMA</code>
+<ul>
+<li>Frame</li>
+<li>Multiframe (26 frames 120ms, 24 are for traffic, 1 for SACCH)</li>
+<li>Superframe (51 multiframes, 6.12 sec)</li>
+<li>Hyperframe (2048 superframes)</li>
+</ul>
+  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Frame.png" class="" title="Frame">
+</li>
+</ul>
+<h3 id="identity-numbers">Identity numbers</h3>
+<ul>
+<li><code>IMSI</code> (International mobile subscriber identity)  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/IMSI.png" class="" title="IMSI">
+<ul>
+<li>用來識別用戶身分</li>
+<li>儲存在 SIM 卡中</li>
+<li>SIM (Subscriber identity module):
+<ul>
+<li>讓 MS 向 BS 表明自己的身分</li>
+<li>Phone number + personal identification number for the station + authentication parameters</li>
+<li>SIM roaming</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>TMSI</code> (Temporary mobile subscriber identity)
+<ul>
+<li>避免暴露用戶身份</li>
+<li>當用戶連上 MSC 後，由該 MSC 的 VLR 分配</li>
+</ul>
+</li>
+<li><code>MSISDN</code> (Mobile system ISDN)  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/MSISDN.png" class="" title="MSISDN">
+<ul>
+<li>電話號碼</li>
+<li>用於 routing、聯絡該 MS (公開的號碼)</li>
+<li>MSISDN 是可以改變的 (改變門號)</li>
+</ul>
+</li>
+<li><code>LAI</code> (Location area identity)  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/LAI.png" class="" title="LAI">
+<ul>
+<li>Cells &lt; location area (LA) &lt; MSC &lt; PLMN (public land mobile network)</li>
+</ul>
+</li>
+<li><code>IMSEI</code> (International MS equipment identity)  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/IMSEI.png" class="" title="IMSEI">
+<ul>
+<li>包含裝置的製造資訊，用來識別設備本身</li>
+<li>設備通過互通性測試後，會被指派一組 TAC (type approval code)</li>
+<li>設備的最終組裝地點: FAC</li>
+<li>為了讓每個設備唯一，會給它一個序號 SNR</li>
+</ul>
+</li>
+<li><code>MSRN</code> (MS roaming number )  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/MSRN.png" class="" title="MSRN">
+<ul>
+<li>用戶漫遊到另一個 MSC 時，會取得 MSRN</li>
+<li>儲存在 HLR 中，讓用戶可以被呼叫</li>
+</ul>
+</li>
+</ul>
+<h3 id="interfaces">Interfaces</h3>
+<ul>
+<li>Interfaces of GSM:  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Interfaces.png" class="" title="Interfaces">
+</li>
+</ul>
+<h3 id="functional-planes">Functional planes</h3>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Functional-planes.png" class="" title="Functional-planes">
+<ul>
+<li><code>Physical plane</code>
+<ul>
+<li>傳送 user information (資料)</li>
+<li>傳送 signaling messages (control signal)</li>
+</ul>
+</li>
+<li><code>Radio resource management (RR)</code>
+<ul>
+<li>負責建立、維持與釋放 MS 與 MSC 之間的通道</li>
+<li>用戶移動時維持連線</li>
+<li>由 MS 與 BSC 共同處理</li>
+<li>Static RRM
+<ul>
+<li>Frequency allocation plans (NCC)</li>
+<li>Base station deployment</li>
+<li>Antenna heights</li>
+<li>Channel frequency plans</li>
+</ul>
+</li>
+<li>Dynamic RRM
+<ul>
+<li>Power control algorithms</li>
+<li>Precoding algorithms</li>
+<li>Link adaptation algorithms</li>
+<li>Dynamic channel allocation (DCA)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Mobility management (MM)</code>
+<ul>
+<li>Security management functions</li>
+<li>由 MS、HLR/AUC、MSC/VLR 共同處理</li>
+</ul>
+</li>
+<li><code>Communication management (CM)</code>
+<ul>
+<li>讓兩位用戶可以連線與對話</li>
+<li>維護與釋放通話資源</li>
+<li>Supplementary services management (呼叫等待、轉接、來電顯示等服務)</li>
+<li>Short message (SMS) management</li>
+</ul>
+</li>
+<li><code>Operation, administration and maintenance (OAM)</code>
+<ul>
+<li>系統的管理後台</li>
+</ul>
+</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+<li>Authentication  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Authentication.png" class="" title="Authentication">
+</li>
+<li>Handoff
+<ul>
+<li>Intracell/intra-BTS handoff
+<ul>
+<li>同一個 cell 內更換 time slot 或是頻率</li>
+</ul>
+</li>
+<li>Intercell/intra-BSC handoff
+<ul>
+<li>同一個 BSC 內更換 cell</li>
+<li>MSC 參與 handoff</li>
+</ul>
+</li>
+<li>Inter-BSC/intra-MSC handoff
+<ul>
+<li>同一個 MSC 內更換 BSC</li>
+<li>MSC 參與 handoff</li>
+</ul>
+</li>
+<li>Inter-MSC handoff
+<ul>
+<li>更換 MCS</li>
+<li>Basic handoff: home MSC -&gt; foreign MSC</li>
+<li>Subsequent handoff: foreign MSC -&gt; foreign MSC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Short message service (SMS)
+<ul>
+<li>在 control channels 上傳送與接收</li>
+<li>傳送者可以確認簡訊是否成功送達對方手機</li>
+<li>支援非文字訊息</li>
+<li>不是直接寄給接收者，經由簡訊中心轉送</li>
+</ul>
+</li>
+</ul>
+<h2 id="imt-2000">IMT-2000</h2>
+<blockquote>
+<p>ITU (International Telecommunications Union) 提出的第三代（3G）行動通訊標準</p>
+</blockquote>
+<ul>
+<li><code>CDMA-based</code> standard</li>
+<li>Standardization work
+<ul>
+<li>Europe: UMTS (W-CDMA)</li>
+<li>Japan: W-CDMA</li>
+<li>USA: cdma2000</li>
+<li>China: TD-SCDMA</li>
+</ul>
+</li>
+</ul>
+<h2 id="umts">UMTS</h2>
+<blockquote>
+<p>歐洲的第三代 (3G) 行動通訊標準</p>
+</blockquote>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/UMTS.png" class="" title="UMTS">
+<ul>
+<li>採用 W-CDMA (Wideband Code Division Multiple Access)</li>
+<li>包含:
+<ul>
+<li>Radio access network (<code>UTRAN</code>)</li>
+<li>Core network (Mobile Application Part, MAP)</li>
+<li>Authentication</li>
+</ul>
+</li>
+</ul>
+<h3 id="utran">UTRAN</h3>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/UTRAN.png" class="" title="UTRAN">
+<ul>
+<li><code>RNS</code>: radio network subsystems
+<ul>
+<li><code>Node B</code> (類似 BTS) - 負責訊號的發射與接收</li>
+<li><code>RNC</code> (類似 BSC) - 負責管理與控制</li>
+</ul>
+</li>
+<li>Protocol structure:  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/UTRAN-protocol.png" class="" title="UTRAN-protocol">
+</li>
+<li>Channels
+<ul>
+<li><code>Transport channels</code> - 定義資料的傳送方式</li>
+<li><code>Logical channels</code> - 定義資料的類型</li>
+<li><code>Physical channels</code>
+<ul>
+<li>FDD
+<ul>
+<li>carrier frequency</li>
+<li>access code (接取碼)</li>
+<li>relative phase (相位差) of the signal in the uplink</li>
+</ul>
+</li>
+<li>TDD
+<ul>
+<li>carrier frequency</li>
+<li>access code</li>
+<li>relative phase of the signal in the uplink</li>
+<li>time slot</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Protocol stack  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Protocol-stack.png" class="" title="Protocol-stack">
+<ul>
+<li><code>AS</code> (Access Stratum)
+<ul>
+<li>處理 UE (手機) 與無線接入網 (如 Node B, RNC) 之間的通訊</li>
+<li>包含 OSI 模型的第 1 到第 3 層 (PHY, MAC, RRC)</li>
+</ul>
+</li>
+<li><code>NAS</code> (Non Access Stratum)
+<ul>
+<li>UE 與核心網 (CN) 之間的訊息交換</li>
+<li><code>CS</code> (circuit switched) - 電話
+<ul>
+<li>CM (connection management) layers</li>
+<li>MM (mobility management) layers</li>
+</ul>
+</li>
+<li><code>PS</code> (packet switched) - 網路
+<ul>
+<li>SM (session management) layers</li>
+<li>GMM (GPRS mobility management) layers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data plane  <img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/Data-plane.png" class="" title="Data-plane">
+</li>
+</ul>
+<h2 id="from-umts-to-lte">From UMTS to LTE</h2>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/UMTS-to-LTE.png" class="" title="UMTS-to-LTE">
+<ul>
+<li><code>EPC</code> (Evolved Packet Core) 替代 packet switched domain of UMTS and GSM</li>
+<li><code>E-UTRAN</code> (Evolved UMTS Terrestrial Radio Access Network) 替代 UTRAN
+<ul>
+<li>處理 EPC 與行動裝置之間的無線通訊</li>
+</ul>
+</li>
+<li>3GPP working items:
+<ul>
+<li><code>SAE</code> (System architecture evolution) - 核心網路</li>
+<li><code>LTE</code> (Long term evolution) - 無線接入技術</li>
+</ul>
+</li>
+<li>完整的名稱: <code>EPS</code> (Evolved Packet System)
+<ul>
+<li>LTE 指的只是無線技術的演進</li>
+</ul>
+</li>
+</ul>
+<h2 id="lte">LTE</h2>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/LTE-1.png" class="" title="LTE-1">
+<ul>
+<li>RE (Resource Element) - 最小的資源單位
+<ul>
+<li>1 RE = 1 subcarrier × 1 OFDM symbol</li>
+</ul>
+</li>
+<li>RB (Resource Block) - LTE 的基本資源配置單位</li>
+<li>PRB (Physical Resource Block) - RB 的具體實體分配版本</li>
+</ul>
+<img src="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/LTE-2.png" class="" title="LTE-2">
+<ul>
+<li>HSS - 資料庫<br>
+TBD</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>通訊原理筆記-L10</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2025/05/14/通訊原理筆記-L10/">https://douobb.github.io/2025/05/14/通訊原理筆記-L10/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2025-05-14</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2025-05-14</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86/">通訊原理</a></div><div class="post_share"><div class="social-share" data-image="/2025/05/14/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L10/cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/05/12/%E7%99%BC%E5%B1%95%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L11/" title="發展心理學筆記-L11"><img class="cover" src="/2025/05/12/%E7%99%BC%E5%B1%95%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L11/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">發展心理學筆記-L11</div></div></a></div><div class="next-post pull-right"><a href="/2025/05/19/%E7%99%BC%E5%B1%95%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L12/" title="發展心理學筆記-L12"><img class="cover" src="/2025/05/19/%E7%99%BC%E5%B1%95%E5%BF%83%E7%90%86%E5%AD%B8%E7%AD%86%E8%A8%98-L12/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">發展心理學筆記-L12</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2025/05/08/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L6/" title="通訊原理筆記-L6"><img class="cover" src="/2025/05/08/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L6/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-08</div><div class="title">通訊原理筆記-L6</div></div></a></div><div><a href="/2025/05/08/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L7/" title="通訊原理筆記-L7"><img class="cover" src="/2025/05/08/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L7/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-08</div><div class="title">通訊原理筆記-L7</div></div></a></div><div><a href="/2025/05/07/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L5/" title="通訊原理筆記-L5"><img class="cover" src="/2025/05/07/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L5/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-07</div><div class="title">通訊原理筆記-L5</div></div></a></div><div><a href="/2025/05/10/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L9/" title="通訊原理筆記-L9"><img class="cover" src="/2025/05/10/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L9/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-10</div><div class="title">通訊原理筆記-L9</div></div></a></div><div><a href="/2025/05/09/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L8/" title="通訊原理筆記-L8"><img class="cover" src="/2025/05/09/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86%E7%AD%86%E8%A8%98-L8/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-09</div><div class="title">通訊原理筆記-L8</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">L10 Existing Wireless Systems</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#history-of-mobile-telecommunication-systems"><span class="toc-number">1.1.</span> <span class="toc-text">History of Mobile Telecommunication Systems</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3g-%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%B5%B1"><span class="toc-number">1.1.1.</span> <span class="toc-text">3G 中的不同系統</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#advanced-mobile-phone-system-amps"><span class="toc-number">1.2.</span> <span class="toc-text">Advanced Mobile Phone System (AMPS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#control-channels"><span class="toc-number">1.2.1.</span> <span class="toc-text">Control Channels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#voice-channels"><span class="toc-number">1.2.2.</span> <span class="toc-text">Voice Channels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#initialization-call-origination"><span class="toc-number">1.2.3.</span> <span class="toc-text">Initialization &amp; Call Origination</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gsm"><span class="toc-number">1.3.</span> <span class="toc-text">GSM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#channels"><span class="toc-number">1.3.1.</span> <span class="toc-text">Channels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frames"><span class="toc-number">1.3.2.</span> <span class="toc-text">Frames</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#identity-numbers"><span class="toc-number">1.3.3.</span> <span class="toc-text">Identity numbers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#interfaces"><span class="toc-number">1.3.4.</span> <span class="toc-text">Interfaces</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#functional-planes"><span class="toc-number">1.3.5.</span> <span class="toc-text">Functional planes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#others"><span class="toc-number">1.3.6.</span> <span class="toc-text">Others</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#imt-2000"><span class="toc-number">1.4.</span> <span class="toc-text">IMT-2000</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#umts"><span class="toc-number">1.5.</span> <span class="toc-text">UMTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#utran"><span class="toc-number">1.5.1.</span> <span class="toc-text">UTRAN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#from-umts-to-lte"><span class="toc-number">1.6.</span> <span class="toc-text">From UMTS to LTE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lte"><span class="toc-number">1.7.</span> <span class="toc-text">LTE</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
