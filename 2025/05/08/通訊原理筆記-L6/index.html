@@ -199,8 +199,7 @@
 <li>Rules:
 <ul>
 <li>Multiple access: a station sends a frame when it has a frame to send</li>
-<li>Acknowledgment: the station <code>waits for an ACK</code> after its<br>
-transmission
+<li>Acknowledgment: the station <code>waits for an ACK</code> after its transmission
 <ul>
 <li>Allotted time: 2 times the max propagation delay</li>
 <li>Retransmission if needed</li>
@@ -222,8 +221,7 @@ transmission
 <h2 id="csma-carrier-sense-multiple-access">CSMA (Carrier Sense Multiple Access)</h2>
 <ul>
 <li>發送前先<code>偵測 (Listen)</code> 通道是否空閒 - 避免碰撞</li>
-<li>Need an algorithm to specify what a station should do if the<br>
-medium is found busy - 產生三種分類:
+<li>Need an algorithm to specify what a station should do if the medium is found busy - 產生三種分類:
 <ul>
 <li><code>Nonpersistent CSMA</code>
 <ul>
@@ -304,7 +302,7 @@ medium is found busy - 產生三種分類:
 <li>MS B 聽到 AP1 正在進行傳輸，認為傳送資料會干擾，導致通道浪費</li>
 <li>解決: 使用 RTS &amp; CTS
 <ul>
-<li>如果只有收到 AP1 的 RTS，而沒有收到 MS B 的 CTS，代表不會產生干擾</li>
+<li>如果只有收到 AP1 的 RTS，而沒有收到 MS A 的 CTS，代表不會產生干擾</li>
 </ul>
 </li>
 </ul>
