@@ -1,0 +1,690 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>電腦安全-L2 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Confidentiality with Symmetric Encryption Symmetric encryption  提供傳輸中或儲存資料的 confidentiality (機密性) 又稱為 Conventional encryption or single-key encryption 安全條件:  強大的加密演算法  在已知部分對應組合 (plaintext–ciphertext">
+<meta property="og:type" content="article">
+<meta property="og:title" content="電腦安全-L2">
+<meta property="og:url" content="http://example.com/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="Confidentiality with Symmetric Encryption Symmetric encryption  提供傳輸中或儲存資料的 confidentiality (機密性) 又稱為 Conventional encryption or single-key encryption 安全條件:  強大的加密演算法  在已知部分對應組合 (plaintext–ciphertext">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/cover.jpg">
+<meta property="article:published_time" content="2026-03-09T10:26:27.000Z">
+<meta property="article:modified_time" content="2026-03-10T06:09:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="電腦安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '電腦安全-L2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-03-10 14:09:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/cover.jpg')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">電腦安全-L2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2026-03-09T10:26:27.000Z" title="發表於 2026-03-09 18:26:27">2026-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2026-03-10T06:09:00.000Z" title="更新於 2026-03-10 14:09:00">2026-03-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E8%B3%87%E5%B7%A5/">資工</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>6分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="電腦安全-L2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Confidentiality with Symmetric Encryption</h1>
+<h2 id="symmetric-encryption">Symmetric encryption</h2>
+<ul>
+<li>提供傳輸中或儲存資料的 <code>confidentiality</code> (機密性)</li>
+<li>又稱為 <code>Conventional encryption</code> or <code>single-key encryption</code></li>
+<li>安全條件:
+<ul>
+<li>強大的加密演算法
+<ul>
+<li>在已知部分對應組合 (plaintext–ciphertext pairs) 以及演算法的情況下，仍無法解出明文 (ciphertext) 或是 金鑰 (key)</li>
+</ul>
+</li>
+<li>安全的金鑰分發與管理</li>
+</ul>
+</li>
+<li>Model (Five major components)</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/Symmetric-encryption.png" class="" title="Symmetric-encryption">
+<h2 id="attacking-symmetric-encryption">Attacking Symmetric Encryption</h2>
+<ul>
+<li>
+<p>Cryptanalytic Attacks</p>
+<ul>
+<li>利用:
+<ul>
+<li><code>演算法</code>本身的特性</li>
+<li><code>明文</code>的一般特性</li>
+<li>一些明文與密文的<code>對應樣本</code> (plaintext–ciphertext pairs)</li>
+</ul>
+</li>
+<li>推導出特定的明文或加密金鑰</li>
+</ul>
+</li>
+<li>
+<p>Brute-Force Attacks</p>
+<ul>
+<li>利用:
+<ul>
+<li>對可能明文的了解</li>
+</ul>
+</li>
+<li>對某些密文嘗試所有可能的金鑰
+<ul>
+<li>直到產生可理解的明文</li>
+<li>平均需要嘗試所有可能金鑰的<code>一半</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="symmetric-block-encryption-algorithms">Symmetric Block Encryption Algorithms</h2>
+<blockquote>
+<p>最常見的對稱式加密方式</p>
+</blockquote>
+<ul>
+<li>將固定大小的明文區塊 (plaintext blocks) 轉為相同大小的密文區塊 (ciphertext blocks)</li>
+</ul>
+<h3 id="data-encryption-standard-des">Data Encryption Standard (DES)</h3>
+<blockquote>
+<p>Adopted in 1977 by the NIST (FIPS PUB 46)</p>
+</blockquote>
+<ul>
+<li>曾經是最廣泛使用的加密方案，又稱為 Data Encryption Algorithm (DEA)</li>
+<li>64-bit 明文區塊 / 56-bit 金鑰 → 64-bit 密文區塊</li>
+<li>安全性問題:
+<ul>
+<li><code>56 bit</code> 金鑰太短
+<ul>
+<li>在今天的處理器速度下不足以抵抗暴力破解</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="triple-des-3des">Triple DES (3DES)</h3>
+<blockquote>
+<p>Part of the DES in 1999: FIPS PUB 46-3</p>
+</blockquote>
+<ul>
+<li>將 DES 演算法重複執行 3 次，並使用 2 or 3 把不同的金鑰</li>
+<li>金鑰長度 <code>112 or 168 bits</code></li>
+<li>優點:
+<ul>
+<li>金鑰長度足夠抵抗暴力破解 (168-bit)</li>
+<li>直接使用 DES 的結構，可以沿用原有的硬體或系統</li>
+</ul>
+</li>
+<li>缺點:
+<ul>
+<li><code>速度慢</code> (需要執行三次 DES)</li>
+<li>區塊大小只有 64 bit，效率低且安全性不足</li>
+</ul>
+</li>
+</ul>
+<h3 id="advanced-encryption-standard-aes">Advanced Encryption Standard (AES)</h3>
+<blockquote>
+<p>NIST Selected Rijndael Algorithm in Nov. 2001: published as FIPS 197</p>
+</blockquote>
+<ul>
+<li>現在已被廣泛應用在商業產品中</li>
+<li>作為 3DES 的替代方案 (3DES 不適合長期使用)</li>
+</ul>
+<h3 id="統整">統整</h3>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/Block-ciphers.png" class="" title="Block-ciphers">
+<ul>
+<li>實務上的安全問題
+<ul>
+<li>如何將對稱式加密應用到大於單一區塊的資料</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-encryption-algorithms">Other Encryption Algorithms</h2>
+<h3 id="electronic-codebook-ecb">Electronic codebook (ECB)</h3>
+<blockquote>
+<p>解決之前提到的問題</p>
+</blockquote>
+<ul>
+<li>Multiple block encryption</li>
+<li>每個區塊使用<code>相同的金鑰</code>加密</li>
+<li>安全問題: 可能會產生規律</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/ECB.png" class="" title="ECB">
+<h3 id="cipher-block-chaining-cbc">Cipher Block Chaining (CBC)</h3>
+<blockquote>
+<p>解決 ECB 的問題</p>
+</blockquote>
+<ul>
+<li>Five modes of operation defined by NIST
+<ul>
+<li>ECB, CBC,…</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/CBC.png" class="" title="CBC">
+<h3 id="stream-cipher">Stream Cipher</h3>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/StreamCipher.png" class="" title="StreamCipher">
+<ul>
+<li>比較</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Block Cipher</th>
+<th>Stream Cipher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>處理方式</td>
+<td>一次一個 block</td>
+<td>連續處理</td>
+</tr>
+<tr>
+<td>單位</td>
+<td>固定大小 (64 / 128 bit)</td>
+<td>bit / byte</td>
+</tr>
+<tr>
+<td>優點</td>
+<td>金鑰可重複使用</td>
+<td>速度快 (XOR 運算)</td>
+</tr>
+<tr>
+<td>應用</td>
+<td>檔案、資料庫</td>
+<td>即時通訊</td>
+</tr>
+</tbody>
+</table>
+<h1>Message Authentication and Hash Functions</h1>
+<ul>
+<li>Message (data) authentication
+<ul>
+<li>通信雙方可以確認收到或儲存的訊息是真實的 (authentic)</li>
+<li>防止資料或交易被偽造</li>
+</ul>
+</li>
+<li>驗證的主要面向
+<ul>
+<li>Message contents: <code>沒有被修改</code></li>
+<li>Message source: <code>authentic</code></li>
+</ul>
+</li>
+<li>其他面向
+<ul>
+<li>Message timeliness/sequence: 確保訊息沒有被<code>延遲或重播</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="message-authentication-without-encryption">Message Authentication without Encryption</h2>
+<ul>
+<li>訊息驗證是獨立於訊息加密的功能
+<ul>
+<li>ex: 廣播訊息給多個接收者</li>
+<li>不是所有接收者都能解密訊息</li>
+<li>如果使用加密，會浪費處理器資源</li>
+</ul>
+</li>
+<li>為每個訊息生成並附加<code>驗證標籤</code> (auth. tag)
+<ul>
+<li>Message Authentication Code (MAC)</li>
+<li>One-Way Hash Function</li>
+</ul>
+</li>
+</ul>
+<h3 id="mac">MAC</h3>
+<ul>
+<li>假設兩個通信方共享同一個秘密金鑰</li>
+<li>使用秘密金鑰生成一個小區塊的資料</li>
+<li>MAC 演算法:
+<ul>
+<li>NIST 推薦 <code>DES</code></li>
+<li>將訊息加密後取<code>最後 16 或 32 bit</code> 作為驗證碼</li>
+</ul>
+</li>
+<li>缺點:
+<ul>
+<li>加密軟體速度慢</li>
+<li>加密硬體成本不可忽略</li>
+<li>加密硬體對大資料量較優化</li>
+</ul>
+</li>
+<li>驗證 (Authentication) 不需要可逆 (reversible)
+<ul>
+<li>只需要一種方法產生 tag，並讓接收方可以驗證</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/MAC.png" class="" title="MAC">
+<h3 id="one-way-hash-function">One-way Hash Function</h3>
+<ul>
+<li>將任意大小的訊息 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span> 轉為固定大小的 Tag <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span></li>
+<li>與 MAC 的差異:
+<ul>
+<li>不需要使用秘密金鑰</li>
+</ul>
+</li>
+<li>函數 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span></span></span></span> 的特性:
+<ul>
+<li>可以應用於任意大小的資料區塊</li>
+<li>輸出長度固定</li>
+<li>計算容易: 使得硬體與軟體實作都可行</li>
+<li>One-way (pre-image resistant)
+<ul>
+<li>給定雜湊值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>，幾乎不可能找到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 使 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">H(x) = h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span></li>
+</ul>
+</li>
+<li>Second pre-image (weak collision) resistant
+<ul>
+<li>對於輸入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，幾乎不可能找到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo mathvariant="normal">≠</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y \neq x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 使 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(y) = H(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>Collision (strong collision) resistant
+<ul>
+<li>幾乎不可能找到兩個不同輸入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 使 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(x) = H(y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/HashFunctions1.png" class="" title="HashFunctions1">
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/HashFunctions2.png" class="" title="HashFunctions2">
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/HashFunctions3.png" class="" title="HashFunctions3">
+<h3 id="security-of-hash-functions">Security of Hash Functions</h3>
+<ul>
+<li>攻擊方法
+<ul>
+<li>Cryptanalysis
+<ul>
+<li>利用演算法的邏輯弱點，成功與否取決於演算法本身</li>
+</ul>
+</li>
+<li>Brute-force
+<ul>
+<li>僅取決於 hash code 長度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>對暴力破解的安全強度
+<ul>
+<li>Preimage resistant: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>Second preimage resistant: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>Collision resistant: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mfrac><mi>n</mi><mn>2</mn></mfrac></msup></mrow><annotation encoding="application/x-tex">2^{\frac{n}{2}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84708em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.84708em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6915428571428572em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<ul>
+<li><code>Birthday attack</code> on a message digest of size n produces a collision</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>應用:
+<ul>
+<li>訊息驗證</li>
+<li>數位簽章</li>
+<li>密碼儲存</li>
+<li>入侵偵測</li>
+</ul>
+</li>
+</ul>
+<h1>Public-Key Encryption</h1>
+<blockquote>
+<p>Proposed by Diffie and Hellman in 1976</p>
+</blockquote>
+<ul>
+<li><code>Asymmetric algorithm</code> (非對稱)</li>
+<li>基於數學函數
+<ul>
+<li>與在位元模式上做簡單運算的 <code>Symmetric algorithms</code> 不同</li>
+</ul>
+</li>
+<li>常見誤解
+<ul>
+<li>比對稱加密更安全</li>
+<li>是一種通用技術，可以取代對稱加密</li>
+<li>金鑰分配容易</li>
+</ul>
+</li>
+<li>使用公鑰加密: 用於保密性 (<code>Confidentiality</code>)</li>
+<li>使用私鑰加密: 用於驗證身份與完整性 (<code>Authentication</code> &amp; <code>Integrity</code>)</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/PublicKey1.png" class="" title="PublicKey1">
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/PublicKey2.png" class="" title="PublicKey2">
+<ul>
+<li>要求
+<ul>
+<li>計算上容易
+<ul>
+<li>Create key pairs</li>
+<li>for sender knowing public key to encrypt messages</li>
+<li>for receiver knowing private key to decrypt ciphertext</li>
+</ul>
+</li>
+<li>對攻擊者計算上不可行，即使攻擊者知道公鑰，也無法:
+<ul>
+<li>推算出私鑰</li>
+<li>還原訊息</li>
+</ul>
+</li>
+<li>任意一把金鑰都可用於加密</li>
+</ul>
+</li>
+</ul>
+<h1>Digital Signatures and Key Management</h1>
+<h2 id="digital-signatures">Digital Signatures</h2>
+<ul>
+<li>將雜湊值 (hash code) 用私鑰加密</li>
+<li>目標:
+<ul>
+<li>驗證訊息來源 (<code>Authentication</code>)</li>
+<li>確保訊息完整性 (<code>Integrity</code>)</li>
+<li>防止訊息被否認 (<code>Non-repudiation</code>)</li>
+</ul>
+</li>
+<li><code>不提供機密性</code> (Confidentiality)</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/DigitalSignatures.png" class="" title="DigitalSignatures">
+<h2 id="public-key-certificates">Public-key Certificates</h2>
+<blockquote>
+<p>Secure distribution of public keys</p>
+</blockquote>
+<ul>
+<li>Public key distribution
+<ul>
+<li>任何人都可以發布自己的公鑰</li>
+<li>安全風險: 可能會有偽造的情況</li>
+</ul>
+</li>
+<li>Solution: Public-key certificate
+<ul>
+<li>Certificate: <code>Public key</code> + <code>user ID of the key owner</code></li>
+<li>憑證由受信任第三方簽署: <code>CA</code> (Certificate Authority)</li>
+<li>憑證包含 <code>CA 資訊</code>以及<code>有效期限</code></li>
+</ul>
+</li>
+<li>X.509 標準: 全球通用的憑證標準</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/Certificates.png" class="" title="Certificates">
+<h2 id="symmetric-key-exchange">Symmetric key exchange</h2>
+<ul>
+<li><code>Diffie-Hellman</code> key exchange
+<ul>
+<li>缺點:
+<ul>
+<li>無法驗證通訊雙方身份</li>
+<li>提出許多變體來解決此問題</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/KeyExchange.png" class="" title="KeyExchange">
+<h2 id="digital-envelopes">Digital envelopes</h2>
+<blockquote>
+<p>distribution of secret keys</p>
+</blockquote>
+<ul>
+<li>保護訊息，但發送者與接收者<code>不用共享相同金鑰</code></li>
+<li>也可用來傳送<code>對稱金鑰</code></li>
+</ul>
+<img src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/DigitalEnvelopes.png" class="" title="DigitalEnvelopes">
+<h1>Random and Pseudorandom Numbers</h1>
+<h2 id="random-numbers">Random Numbers</h2>
+<ul>
+<li>用於產生:
+<ul>
+<li>Keys for <code>public-key algorithms</code></li>
+<li>Stream keys for <code>symmetric stream cipher</code></li>
+<li><code>Symmetric keys</code>…</li>
+</ul>
+</li>
+<li>要求:
+<ul>
+<li><code>Randomness</code> (Statistical Properties)
+<ul>
+<li>Uniform distribution: 每個數字出現頻率大致相同</li>
+</ul>
+</li>
+<li><code>Unpredictability</code> (Cryptographic Security)
+<ul>
+<li>序列中下一個數字無法被預測</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="random-vs-pseudorandom">Random vs. Pseudorandom</h2>
+<ul>
+<li><code>Pseudorandom</code>: 廣泛被接受
+<ul>
+<li>使用確定性演算法 (<code>Deterministic algorithm</code>) 生成</li>
+<li>不是真正隨機，但可以<code>通過統計隨機性測試</code></li>
+</ul>
+</li>
+<li><code>Random</code>: true random number generator (<code>TRNG</code>)
+<ul>
+<li>使用<code>非確定性來源</code>生成隨機數</li>
+<li>大多透過測量不可預測的自然現象
+<ul>
+<li>ex: 輻射、氣體放電…</li>
+</ul>
+</li>
+<li>越來越多現代晶片提供</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>電腦安全-L2</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2026/03/09/電腦安全-L2/">https://douobb.github.io/2026/03/09/電腦安全-L2/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2026-03-09</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2026-03-10</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8/">電腦安全</a></div><div class="post_share"><div class="social-share" data-image="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/" title="電腦安全-L1"><img class="cover" src="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">電腦安全-L1</div></div></a></div><div class="next-post pull-right"><a href="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/" title="電腦安全-L22"><img class="cover" src="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">電腦安全-L22</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/" title="電腦安全-L1"><img class="cover" src="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-03</div><div class="title">電腦安全-L1</div></div></a></div><div><a href="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/" title="電腦安全-L22"><img class="cover" src="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-10</div><div class="title">電腦安全-L22</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Confidentiality with Symmetric Encryption</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#symmetric-encryption"><span class="toc-number">1.1.</span> <span class="toc-text">Symmetric encryption</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#attacking-symmetric-encryption"><span class="toc-number">1.2.</span> <span class="toc-text">Attacking Symmetric Encryption</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#symmetric-block-encryption-algorithms"><span class="toc-number">1.3.</span> <span class="toc-text">Symmetric Block Encryption Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#data-encryption-standard-des"><span class="toc-number">1.3.1.</span> <span class="toc-text">Data Encryption Standard (DES)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#triple-des-3des"><span class="toc-number">1.3.2.</span> <span class="toc-text">Triple DES (3DES)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advanced-encryption-standard-aes"><span class="toc-number">1.3.3.</span> <span class="toc-text">Advanced Encryption Standard (AES)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B5%B1%E6%95%B4"><span class="toc-number">1.3.4.</span> <span class="toc-text">統整</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#other-encryption-algorithms"><span class="toc-number">1.4.</span> <span class="toc-text">Other Encryption Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#electronic-codebook-ecb"><span class="toc-number">1.4.1.</span> <span class="toc-text">Electronic codebook (ECB)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cipher-block-chaining-cbc"><span class="toc-number">1.4.2.</span> <span class="toc-text">Cipher Block Chaining (CBC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stream-cipher"><span class="toc-number">1.4.3.</span> <span class="toc-text">Stream Cipher</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Message Authentication and Hash Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#message-authentication-without-encryption"><span class="toc-number">2.1.</span> <span class="toc-text">Message Authentication without Encryption</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mac"><span class="toc-number">2.1.1.</span> <span class="toc-text">MAC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#one-way-hash-function"><span class="toc-number">2.1.2.</span> <span class="toc-text">One-way Hash Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#security-of-hash-functions"><span class="toc-number">2.1.3.</span> <span class="toc-text">Security of Hash Functions</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">Public-Key Encryption</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">Digital Signatures and Key Management</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#digital-signatures"><span class="toc-number">4.1.</span> <span class="toc-text">Digital Signatures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#public-key-certificates"><span class="toc-number">4.2.</span> <span class="toc-text">Public-key Certificates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#symmetric-key-exchange"><span class="toc-number">4.3.</span> <span class="toc-text">Symmetric key exchange</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#digital-envelopes"><span class="toc-number">4.4.</span> <span class="toc-text">Digital envelopes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">Random and Pseudorandom Numbers</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#random-numbers"><span class="toc-number">5.1.</span> <span class="toc-text">Random Numbers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#random-vs-pseudorandom"><span class="toc-number">5.2.</span> <span class="toc-text">Random vs. Pseudorandom</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)","url(/img/background9.jpg)","url(/img/background10.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
