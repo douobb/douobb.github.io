@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>電腦安全-L24</title>
+      <link href="/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/"/>
+      <url>/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/</url>
+      
+        <content type="html"><![CDATA[<h1>Wireless Security</h1><ul><li>有較高的安全風險:<ul><li>Channel<ul><li>廣播式通訊: 容易被竊聽、干擾</li><li>Communication protocols (通訊協定) 的弱點</li></ul></li><li>Mobility<ul><li>裝置具有可攜性、移動性</li></ul></li><li>Resources<ul><li>裝置的記憶體、計算資源有限</li></ul></li><li>Accessibility<ul><li>感測器可能放置在偏遠或敵對環境</li></ul></li></ul></li><li>Wireless Network Threats<ul><li>Accidental association</li><li>Malicious association</li><li>Ad hoc networks</li><li>Nontraditional networks</li><li>Identity theft (MAC spoofing)</li><li>Man-in-the middle attacks</li><li>Denial of service (DoS)</li><li>Networkinjection</li></ul></li></ul><h2 id="wireless-security-measures">Wireless Security Measures</h2><ul><li>Securing wireless transmissions<ul><li>主要威脅與對策:<ul><li>竊聽: 信號隱藏、加密</li><li>竄改: 加密、認證 (Authentication protocols)</li><li>干擾: 偵測</li></ul></li></ul></li><li>Securing wireless networks<ul><li>Access Points: 防止未授權裝置存取網路</li><li>主要方法: IEEE 802.1X (port-based network access control)<ul><li>提供身份驗證機制</li><li>防止假基地台與未授權設備</li></ul></li></ul></li></ul><h1>Mobile Device Security</h1><ul><li>組織的網路必須能夠因應:<ul><li>行動裝置數量大幅增加</li><li>雲端應用</li><li>去邊界化</li><li>外部業務需求</li></ul></li><li>Security Threats:<ul><li>Lack of physical security controls</li><li>Use of untrusted networks</li><li>Use of untrusted mobile devices</li><li>Use of applications created by unknown parties</li><li>Interaction with other systems</li><li>Use of untrusted content</li><li>Use of location services</li></ul></li></ul><h2 id="mobile-device-security-strategy">Mobile Device Security Strategy</h2><ul><li>Device security<ul><li>提供公司配發的行動裝置，並預先設定安全配置</li><li>採用 BYOD (Bring Your Own Device) 政策<ul><li>對作業系統與應用程式制定設定規範</li></ul></li></ul></li><li>Traffic security<ul><li>基於加密與身份驗證</li><li>透過 VPN</li></ul></li><li>Barrier security<ul><li>對行動裝置流量套用專門的防火牆政策</li></ul></li></ul><h1>IEEE 802.11 Wireless LAN Overview</h1><ul><li>Wi-Fi Protected Access (<code>WPA</code>)<ul><li>Certification procedures for IEEE802.11 security standards</li><li>Most recent version: WPA2/WPA3</li></ul></li></ul><h1>IEEE 802.11i Wireless LAN Security</h1><h2 id="wired-equivalent-privacy-wep">Wired Equivalent Privacy (WEP)</h2><ul><li>已證實不安全</li></ul><h2 id="robust-security-network-rsn-wpa2">Robust Security Network (RSN/WPA2)</h2><blockquote><p>Final form of the 802.11i standard</p></blockquote><ul><li>Five Phases<ul><li><code>Discovery</code><ul><li>AP 廣播其安全能力 (加密、認證方式)</li></ul></li><li><code>Authentication</code><ul><li>使用 <code>IEEE 802.1X</code> 架構</li></ul></li><li><code>Key Management</code><ul><li>透過 Handshake 手法來生成 <code>Pairwise keys</code> (一對一) or <code>Group keys</code> (群播)</li></ul></li><li><code>Protected Data Transfer</code><ul><li>使用 <code>TKIP</code> or <code>CCMP</code> 加密數據</li><li><code>TKIP</code>: 為了兼容舊硬體的過渡方案，只需要對舊的 <code>WEP</code> 做軟體層修改</li><li><code>CCMP</code>: 需要硬體支援</li></ul></li><li><code>Connection Termination</code></li></ul></li></ul><h3 id="ieee-802-1x">IEEE 802.1X</h3><ul><li>Three phases<ul><li>Connect to AS</li><li>EAP exchange</li><li>Secure key delivery</li></ul></li><li><code>EAP</code> Authentication Protocol:<ul><li>一種認證框架而非特定機制</li><li>由伺服器發起的雙向認證</li><li>Popular EAP Methods:<ul><li>Cisco LEAP</li><li>EAP-FAST</li><li><code>EAP-TLS</code>: 需要雙向憑證，安全性最高</li><li><code>PEAP</code>: 僅需伺服器憑證</li></ul></li></ul></li></ul><h2 id="wpa3">WPA3</h2><ul><li>A replacement to WPA2</li><li><code>WPA/WPA2</code> 的 <code>PSK</code> (Pre-Shared Key) 容易受到 <code>KRACK</code> (Key Reinstallation Attack) 攻擊<ul><li><code>KRACK</code>: 一種針對 WPA 的 replay attack<ul><li>在 <code>WPA2 handshake</code> 的第三步</li></ul></li><li><code>WPA3</code> 使用 <code>SAE</code> 替代<ul><li>A variant of the Dragonfly key exchange</li><li>不直接發送密碼</li></ul></li></ul></li></ul><h3 id="比較">比較</h3><ul><li><code>WPA2</code><ul><li>使用 <code>PSK</code> or Enterprise mode</li><li>容易受到離線字典攻擊 (offline dictionary attacks)</li><li>使用 <code>AES-CCMP</code> 加密</li></ul></li><li><code>WPA3</code><ul><li>在 personal mode 中以 <code>SAE</code> 取代 <code>PSK</code></li><li>對暴力破解/字典攻擊具有更強的抵抗能力</li><li>使用 <code>AES</code> 加密，Enterprise mode 可選用 192-bit 加密</li></ul></li></ul><img src="/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/WPA2-3.png" class="" title="WPA2-3">]]></content>
+      
+      
+      <categories>
+          
+          <category> 筆記 </category>
+          
+          <category> 資工 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 電腦安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>電腦安全-L3</title>
       <link href="/2026/03/17/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L3/"/>
       <url>/2026/03/17/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L3/</url>
@@ -132,9 +159,9 @@
             
             <tag> 資料結構 </tag>
             
-            <tag> Stack </tag>
-            
             <tag> Queue </tag>
+            
+            <tag> Stack </tag>
             
         </tags>
       
