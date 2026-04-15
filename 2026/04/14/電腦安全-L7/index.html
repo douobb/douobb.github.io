@@ -1,0 +1,690 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>電腦安全-L7 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Denial of Service (DoS) Attack 定義:  by NIST [CICH12] DoS 是一種會阻止或削弱對網路、系統或應用程式的授權使用的行為，其方式是耗盡資源 (exhausting resources)，例如中央處理器 (CPU)、記憶體、頻寬以及磁碟空間。  Uncovering Insecure Designs of Cellular Emergency Ser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="電腦安全-L7">
+<meta property="og:url" content="http://example.com/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="Denial of Service (DoS) Attack 定義:  by NIST [CICH12] DoS 是一種會阻止或削弱對網路、系統或應用程式的授權使用的行為，其方式是耗盡資源 (exhausting resources)，例如中央處理器 (CPU)、記憶體、頻寬以及磁碟空間。  Uncovering Insecure Designs of Cellular Emergency Ser">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/cover.jpg">
+<meta property="article:published_time" content="2026-04-14T05:28:13.000Z">
+<meta property="article:modified_time" content="2026-04-14T09:03:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="電腦安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '電腦安全-L7',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-04-14 17:03:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/cover.jpg')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">電腦安全-L7</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2026-04-14T05:28:13.000Z" title="發表於 2026-04-14 13:28:13">2026-04-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2026-04-14T09:03:00.000Z" title="更新於 2026-04-14 17:03:00">2026-04-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E8%B3%87%E5%B7%A5/">資工</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>9分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="電腦安全-L7"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Denial of Service (DoS) Attack 定義:</p>
+<ul>
+<li>by NIST [CICH12]</li>
+<li><code>DoS</code> 是一種會阻止或削弱對網路、系統或應用程式的授權使用的行為，其方式是<code>耗盡資源 (exhausting resources)</code>，例如中央處理器 (CPU)、記憶體、頻寬以及磁碟空間。</li>
+</ul>
+<h1>Uncovering Insecure Designs of Cellular Emergency Services (911)</h1>
+<h2 id="cellular-emergency-services-911">Cellular Emergency Services (911)</h2>
+<ul>
+<li><code>Emergency services</code> 是處於緊急狀況的人們的重要生命線</li>
+<li>全球部署的 <code>cellular networks</code> 成為緊急使用者最容易接取的通道</li>
+<li>為了確保行動緊急服務的 <code>availability</code>
+<ul>
+<li>聯邦通訊委員會 (FCC) 規定，行動電信業者必須將所有無線 911 通話，<code>不論其通話驗證流程為何</code>，一律轉送至公共安全應答中心 (PSAP)</li>
+<li>GSMA 的標準要求，所有行動電話即使<code>沒有 SIM 卡</code>也必須支援緊急服務，且對行動用戶<code>免費</code></li>
+<li>3GPP 標準要求，緊急服務的優先權必須高於其他行動通訊服務</li>
+</ul>
+</li>
+</ul>
+<h2 id="our-findings">Our Findings</h2>
+<ul>
+<li>行動通訊緊急服務是可以被<code>阻斷 (deniable)</code> 且可以被<code>濫用 (abusable)</code> 的</li>
+<li>IMS Emergency Service Flow:
+<ol>
+<li><code>Emergency IP-CAN Session Establishment</code>: 讓 UE 取得緊急用的 IP 連線，以便與 IMS 伺服器通訊</li>
+<li><code>IMS Emergency Registration</code>: 透過 IPSec 在 UE 與 IMS 伺服器之間建立安全通訊</li>
+<li><code>IMS Emergency Session Establishment</code>: 使緊急 UE 能透過 IMS 伺服器，與 PSAP 建立緊急通話/簡訊會話</li>
+</ol>
+</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/IMS-Emergency-Service-Flow.png" class="" title="IMS-Emergency-Service-Flow">
+<h3 id="denial-of-cellular-emergency-service">Denial of Cellular Emergency Service</h3>
+<ul>
+<li>V1: Unverifiable emergency IP-CAN session requests
+<ul>
+<li>無法區分第二個 IP-CAN 會話建立請求是由正常使用者還是攻擊者發送的</li>
+<li>當收到重複的 IP-CAN 會話建立請求時，根據標準，4G/5G 基礎設施有兩種處理方式
+<ul>
+<li>拒絕該重複請求，或接受該重複請求但保留現有的緊急 IP-CAN 會話 (4G)</li>
+<li>一律拒絕重複請求 (5G)</li>
+</ul>
+</li>
+<li>表面上看起來，拒絕重複請求是正確的?
+<ul>
+<li>實際情況更複雜，這些重複請求可能來自正常的使用者</li>
+</ul>
+</li>
+<li>驗證: 某些電信商在收到重複請求時會中斷現有的連線，導致合法的通話被切斷</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/V1.png" class="" title="V1">
+<ul>
+<li>V2: Improper Cross-layer Security Binding
+<ul>
+<li>UE 與 IMS 伺服器之間的安全通訊依賴 <code>IPSec</code></li>
+<li>然而，IPSec 的加密與完整性金鑰是從 <code>IMS emergency registration (SIP registration)</code> 中衍生出來的
+<ul>
+<li>網路層安全 (IPSec) 被不必要地綁定到應用層安全 (SIP)</li>
+</ul>
+</li>
+<li>驗證此漏洞得到兩個觀察結果
+<ul>
+<li>UE 並未執行 IMS emergency registration</li>
+<li>SIP INVITE 訊息全部以明文傳送，沒有 <code>confidentiality/integrity</code> 保護</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/V2.png" class="" title="V2">
+<ul>
+<li>Denial of Cellular Emergency Service (DoCES) Attacks
+<ul>
+<li>Phase I: 已取得 IP 連線，但尚未撥打電話
+<ul>
+<li>UE detaching: 發送<code>重複</code>的 attach (V1)</li>
+</ul>
+</li>
+<li>Phase II: 電話已撥出，但尚未被 PSAP 接聽
+<ul>
+<li>Call cancel: 發送<code>偽造</code>的 SIP CANCEL 訊息 (V2)</li>
+</ul>
+</li>
+<li>Phase III: 電話已撥出且已被接聽
+<ul>
+<li>Call drop: 發送<code>偽造</code>的 SIP BYE 訊息 (V2)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/DoCES.png" class="" title="DoCES">
+<h1>Denial-of-Service Attacks</h1>
+<ul>
+<li>透過妨礙或完全阻斷某些服務的提供來破壞 availability
+<ul>
+<li>ex: 大量虛假請求淹沒網站伺服器</li>
+</ul>
+</li>
+<li>Nowadays: distributed denial-of-service (<code>DDoS</code>) attacks
+<ul>
+<li>由於網際網路頻寬的成長</li>
+</ul>
+</li>
+</ul>
+<h2 id="categories-of-resources">Categories of Resources</h2>
+<ul>
+<li><code>Network bandwidth</code>
+<ul>
+<li>與伺服器連接到網際網路的網路鏈路容量有關</li>
+<li>對大多數組織而言，這指的是他們連接到網際網路服務提供商 (ISP) 的連線</li>
+</ul>
+</li>
+<li><code>System resources</code>
+<ul>
+<li>目標是讓網路處理軟體過載或當機</li>
+</ul>
+</li>
+<li><code>Application resources</code>
+<ul>
+<li>通常涉及大量請求，每一個請求都消耗大量資源</li>
+<li>限制伺服器回應其他使用者請求的能力</li>
+</ul>
+</li>
+</ul>
+<h2 id="classic-dos-attack-i">Classic DoS Attack I</h2>
+<ul>
+<li><code>Ping flooding attack</code>
+<ul>
+<li>流量：ICMP 回聲請求與回應封包</li>
+<li>目標：超過目標組織網路連線的承載能力</li>
+<li>流量可能在路徑上較高容量的鏈路被處理，但隨著容量下降，封包會被丟棄</li>
+</ul>
+</li>
+<li>從攻擊者角度的兩個缺點:
+<ul>
+<li>攻擊來源很容易被識別</li>
+<li>攻擊會反映在 source system
+<ul>
+<li>網路效能會明顯受到影響 (會被發現)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="source-address-spoofing">Source Address Spoofing</h3>
+<ul>
+<li>
+<p>偽造來源 IP 位址</p>
+<ul>
+<li>透過作業系統的 raw socket 介面實現</li>
+</ul>
+</li>
+<li>
+<p>讓 <code>Ping flooding attack</code> 的 ICMP 回應封包不再回傳到攻擊來源</p>
+</li>
+<li>
+<p>隨機偽造來源位址: <code>backscatter traffic</code></p>
+</li>
+<li>
+<p>為什麼偽造來源位址這麼容易?</p>
+<ul>
+<li>TCP/IP 的設計背景: 在合作、信任的環境中發展
+<ul>
+<li>沒有內建機制來驗證來源位址是否有效</li>
+</ul>
+</li>
+<li>解決方法:
+<ul>
+<li>在 routers 上進行過濾以確保來源正確性</li>
+</ul>
+</li>
+<li>然而許多 ISP 仍未實作此類過濾</li>
+</ul>
+</li>
+</ul>
+<h2 id="classic-dos-attack-ii">Classic DoS Attack II</h2>
+<ul>
+<li><code>TCP SYN spoofing</code>
+<ul>
+<li>目標：攻擊網路伺服器回應 TCP 連線請求的能力</li>
+<li>讓用來管理這些連線的表格溢出 (被填滿)</li>
+<li>產生大量偽造的連線請求送到伺服器</li>
+<li>合法使用者被拒絕存取</li>
+</ul>
+</li>
+<li>Different from the basic flooding attack
+<ul>
+<li>實際 SYN 流量可能相對較低</li>
+<li>但足以讓 TCP 已知連線表持續被填滿</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/AttackII.png" class="" title="AttackII">
+<h1>Flooding Attacks</h1>
+<ul>
+<li>
+<p>Classified based on <code>network protocols</code></p>
+</li>
+<li>
+<p>目的：讓連到伺服器的某條網路鏈路容量超載</p>
+</li>
+<li>
+<p>攻擊受限於 <code>single system</code></p>
+</li>
+<li>
+<p>ICMP flood</p>
+<ul>
+<li>使用 ICMP echo request 封包的 ping 洪水攻擊</li>
+<li>傳統上網路管理員會允許這類封包進入網路</li>
+</ul>
+</li>
+<li>
+<p>UDP flood</p>
+<ul>
+<li>使用 UDP 封包發送到目標系統的特定埠號，例如 DNS UDP flood</li>
+</ul>
+</li>
+<li>
+<p>TCP SYN flood</p>
+<ul>
+<li>向目標系統發送 TCP 封包</li>
+<li>攻擊目標是 <code>total volume of packets</code>，而不是 system code</li>
+</ul>
+</li>
+</ul>
+<h1>Distributed Denial of Service (DDoS) Attacks</h1>
+<ul>
+<li>使用 <code>multiple systems</code> 發動攻擊</li>
+<li>利用惡意軟體入侵系統，並安裝 attack agent (被控制的系統為 <code>zombie</code>)</li>
+<li>被單一攻擊者控制的大量系統集合: <code>殭屍網路 (botnet)</code></li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/DDoS.png" class="" title="DDoS">
+<ul>
+<li>最早且最知名的 DDoS 工具: Tribe Flood Network (TFN) - Mixter
+<ul>
+<li>功能: ICMP flood, SYN flood, UDP flood, and ICMP amplification</li>
+<li>隱蔽方式:
+<ul>
+<li>大量被入侵的系統</li>
+<li>加密通訊</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>現代 DDoS 工具
+<ul>
+<li>隱蔽方式:
+<ul>
+<li>使用 IRC 或 HTTP servers 與 agents 溝通，而不是傳統的 handler</li>
+<li>Agents authentication</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最好的防禦：防止你的系統被入侵</li>
+</ul>
+<h1>Application-Based Bandwidth Attacks</h1>
+<blockquote>
+<p>強迫目標執行消耗資源的操作</p>
+</blockquote>
+<h2 id="sip-session-initiation-protocol-flood">SIP (Session Initiation Protocol) Flood</h2>
+<ul>
+<li><code>SIP</code>: 用於 VoIP (網路語音) 中的通話建立協定</li>
+<li>單一 INVITE 請求會觸發相當可觀的資源消耗</li>
+<li>攻擊:
+<ul>
+<li>用於處理 INVITE 請求的伺服器資源</li>
+<li>網路容量被消耗</li>
+</ul>
+</li>
+<li>影響: 合法的來電無法被允許</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/SIP.png" class="" title="SIP">
+<h2 id="http-based-attacks-http-flood">HTTP-based Attacks: HTTP Flood</h2>
+<ul>
+<li>用大量 HTTP 請求轟炸 Web servers，消耗大量資源</li>
+<li>Example I: an HTTP request to <code>download a large file</code>
+<ul>
+<li>消耗記憶體、處理能力與傳輸資源</li>
+</ul>
+</li>
+<li>Example II: <code>Spidering</code> (爬蟲)
+<ul>
+<li>機器人從一個指定的 HTTP 連結開始，並以遞迴方式追蹤網站中的所有連結</li>
+</ul>
+</li>
+</ul>
+<h2 id="http-based-attacks-slowloris">HTTP-based Attacks: Slowloris</h2>
+<ul>
+<li>佔用 Web server 所有可用的 <code>request-handling threads</code></li>
+<li>發送永遠不會完成的 HTTP 請求</li>
+<li><code>HTTP protocol</code> 規定: 必須使用<code>空白行</code>來表示 request header 結束、payload 開始
+<ul>
+<li>Step 1: 送出一個沒有空白行的不完整請求</li>
+<li>Step 2: 定期送出額外的 header 行以維持連線存活</li>
+</ul>
+</li>
+<li>無法被基於特徵碼 (signature-based) 的防護系統偵測: 看起來是合法 HTTP 流量</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/HTTP-protocol.png" class="" title="HTTP-protocol">
+<h1>Reflector and Amplifier Attacks</h1>
+<ul>
+<li>正常的 server systems 被作為攻擊的中介者</li>
+<li>更容易部署: 因為它們對封包的處理完全是正常的</li>
+<li>更難追溯到真正的攻擊者</li>
+</ul>
+<h2 id="reflection-attacks">Reflection Attacks</h2>
+<ul>
+<li>向中介系統上的某個已知服務發送封包，並<code>偽造來源位址</code>為受害者的 IP</li>
+<li>中介系統會將回應封包發送給受害者</li>
+<li><code>Intermediary systems</code> (中介系統): 高容量的網路伺服器或路由器</li>
+<li>Fundamental issue: <code>spoofed-source packets</code></li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/ReflectionAttacks.png" class="" title="ReflectionAttacks">
+<h2 id="amplification-attacks">Amplification Attacks</h2>
+<ul>
+<li>將請求導向某個網路的廣播位址 (broadcast address)</li>
+<li>利用中間網路中大量主機都會處理的服務
+<ul>
+<li>ex: ping, suitable UDP services (echo)</li>
+</ul>
+</li>
+<li>TCP 服務不能用於這種攻擊
+<ul>
+<li>TCP 為一對一連線，無法 broadcast</li>
+</ul>
+</li>
+<li>防禦方式: 不允許外部封包被路由到網路內的定向廣播 (directed broadcast)</li>
+<li>其他防禦方式:
+<ul>
+<li>阻擋偽造來源 IP 位址</li>
+<li>限制網路服務 (echo/ping) 不能從外部存取</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/AmplificationAttacks.png" class="" title="AmplificationAttacks">
+<h3 id="dns-amplification-attack">DNS Amplification Attack</h3>
+<ul>
+<li>使用發送到合法 DNS 伺服器的封包作為中介</li>
+<li>Amplification: converting a small request to a much larger response
+<ul>
+<li>60-byte UDP 請求 -&gt; 512-byte UDP 回應</li>
+</ul>
+</li>
+</ul>
+<h1>Defenses</h1>
+<ul>
+<li>DoS Attack 無法被完全防止</li>
+<li>高流量可能是合法的
+<ul>
+<li>熱門網站</li>
+<li>Described as <code>slashdotted</code> or <code>flash crowd</code></li>
+</ul>
+</li>
+<li>常見應對方式: 提供大量額外網路頻寬與複製的分散式伺服器
+<ul>
+<li>高成本</li>
+</ul>
+</li>
+</ul>
+<h2 id="flooding-attacks">Flooding Attacks</h2>
+<ul>
+<li>阻擋偽造的來源位址
+<ul>
+<li>在盡可能接近來源端的路由器上進行</li>
+</ul>
+</li>
+<li>使用過濾機制來確保封包能夠回到其宣稱的來源位址</li>
+<li>對某些特定類型的封包施加傳送速率限制</li>
+</ul>
+<h2 id="syn-spoofing-attacks">SYN Spoofing Attacks</h2>
+<ul>
+<li>修改 TCP 連線處理機制的實作方式
+<ul>
+<li>將關鍵資訊以加密方式編碼在一個 <code>cookie</code> 中，並作為伺服器的初始序列號 (Initial Sequence Number) 傳送</li>
+</ul>
+</li>
+<li>Selective drop: 當 TCP connections table 溢出時，丟棄未完成連線的項目</li>
+<li>調整參數: 連線表大小與逾時時間</li>
+</ul>
+<h2 id="others">Others</h2>
+<ul>
+<li>阻擋 IP 定向廣播 (directed broadcast)</li>
+<li>阻擋可疑的服務與其組合</li>
+<li>使用圖形驗證機制 (captcha) 來避免 <code>application attacks</code>，以區分合法的人類請求</li>
+<li>良好的整體系統安全實務</li>
+<li>在需要高效能與高可靠性的情況下，使用鏡像與複製的伺服器</li>
+</ul>
+<h1>紅字整理</h1>
+<div class="note primary no-icon flat"><p>P2: Denial of Service (DoS) Attack</p>
+<ul>
+<li>DoS 是一種會阻止或削弱對網路、系統或應用程式的授權使用的行為，其方式是<code>耗盡資源 (exhausting resources)</code>，例如中央處理器 (CPU)、記憶體、頻寬以及磁碟空間。</li>
+</ul>
+</div>
+<div class="note primary no-icon flat"><p>P5: Cellular Emergency Service Practice</p>
+<ul>
+<li>聯邦通訊委員會 (FCC) 規定，行動電信業者必須將所有無線 911 通話，<code>不論其通話驗證流程為何</code>，一律轉送至公共安全應答中心 (<code>PSAP</code>)</li>
+<li>GSMA 的標準要求，所有行動電話即使<code>沒有 SIM 卡</code>也必須支援緊急服務，且對行動用戶<code>免費</code></li>
+</ul>
+</div>
+<div class="note primary no-icon flat"><p>P23: Source Address Spoofing</p>
+<ul>
+<li>Harder to identify attacking systems, <code>Why?</code>
+<ul>
+<li>ICMP reply 會回到偽造的 IP</li>
+<li>TCP/IP 沒有內建機制來驗證來源位址是否有效</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="note primary no-icon flat"><p>P25: Classic DoS Attack II</p>
+<ul>
+<li>SYN spoofing: <code>Overflowing the tables used to manage such connections</code></li>
+</ul>
+</div>
+<div class="note primary no-icon flat"><p>P27: Flooding Attacks</p>
+<ul>
+<li><code>However, the flooding attacks are limited by a single system!!</code></li>
+<li>DDoS: multiple systems</li>
+</ul>
+</div>
+<div class="note primary no-icon flat"><p>P32: HTTP-based Attacks: HTTP Flood</p>
+<ul>
+<li>Consuming considerable resources. <code>How?</code>
+<ul>
+<li>下載大檔案</li>
+<li>爬蟲遍歷網址</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="note primary no-icon flat"><p>P33: HTTP-based Attacks: HTTP Flood</p>
+<ul>
+<li>Sending HTTP requests that never complete, <code>How?</code>
+<ul>
+<li><code>HTTP protocol</code> 規定: 必須使用<code>空白行</code>來表示 request header 結束、payload 開始
+<ul>
+<li>Step 1: 送出一個沒有空白行的不完整請求</li>
+<li>Step 2: 定期送出額外的 header 行以維持連線存活</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>電腦安全-L7</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2026/04/14/電腦安全-L7/">https://douobb.github.io/2026/04/14/電腦安全-L7/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2026-04-14</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2026-04-14</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8/">電腦安全</a></div><div class="post_share"><div class="social-share" data-image="/2026/04/14/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L7/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/04/12/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L23/" title="電腦安全-L23"><img class="cover" src="/2026/04/12/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L23/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">電腦安全-L23</div></div></a></div><div class="next-post pull-right"><a href="/2026/04/15/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86-%E6%9C%9F%E4%B8%AD/" title="影像處理-期中"><img class="cover" src="/2026/04/15/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86-%E6%9C%9F%E4%B8%AD/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">影像處理-期中</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/" title="電腦安全-L1"><img class="cover" src="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-03</div><div class="title">電腦安全-L1</div></div></a></div><div><a href="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/" title="電腦安全-L2"><img class="cover" src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-09</div><div class="title">電腦安全-L2</div></div></a></div><div><a href="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/" title="電腦安全-L22"><img class="cover" src="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-10</div><div class="title">電腦安全-L22</div></div></a></div><div><a href="/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/" title="電腦安全-L24"><img class="cover" src="/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-25</div><div class="title">電腦安全-L24</div></div></a></div><div><a href="/2026/04/12/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L23/" title="電腦安全-L23"><img class="cover" src="/2026/04/12/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L23/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-12</div><div class="title">電腦安全-L23</div></div></a></div><div><a href="/2026/03/17/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L3/" title="電腦安全-L3"><img class="cover" src="/2026/03/17/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L3/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-17</div><div class="title">電腦安全-L3</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Uncovering Insecure Designs of Cellular Emergency Services (911)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cellular-emergency-services-911"><span class="toc-number">1.1.</span> <span class="toc-text">Cellular Emergency Services (911)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#our-findings"><span class="toc-number">1.2.</span> <span class="toc-text">Our Findings</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#denial-of-cellular-emergency-service"><span class="toc-number">1.2.1.</span> <span class="toc-text">Denial of Cellular Emergency Service</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Denial-of-Service Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#categories-of-resources"><span class="toc-number">2.1.</span> <span class="toc-text">Categories of Resources</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#classic-dos-attack-i"><span class="toc-number">2.2.</span> <span class="toc-text">Classic DoS Attack I</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#source-address-spoofing"><span class="toc-number">2.2.1.</span> <span class="toc-text">Source Address Spoofing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#classic-dos-attack-ii"><span class="toc-number">2.3.</span> <span class="toc-text">Classic DoS Attack II</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">Flooding Attacks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">Distributed Denial of Service (DDoS) Attacks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">Application-Based Bandwidth Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sip-session-initiation-protocol-flood"><span class="toc-number">5.1.</span> <span class="toc-text">SIP (Session Initiation Protocol) Flood</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-based-attacks-http-flood"><span class="toc-number">5.2.</span> <span class="toc-text">HTTP-based Attacks: HTTP Flood</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-based-attacks-slowloris"><span class="toc-number">5.3.</span> <span class="toc-text">HTTP-based Attacks: Slowloris</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">Reflector and Amplifier Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#reflection-attacks"><span class="toc-number">6.1.</span> <span class="toc-text">Reflection Attacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amplification-attacks"><span class="toc-number">6.2.</span> <span class="toc-text">Amplification Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dns-amplification-attack"><span class="toc-number">6.2.1.</span> <span class="toc-text">DNS Amplification Attack</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">Defenses</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#flooding-attacks"><span class="toc-number">7.1.</span> <span class="toc-text">Flooding Attacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#syn-spoofing-attacks"><span class="toc-number">7.2.</span> <span class="toc-text">SYN Spoofing Attacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#others"><span class="toc-number">7.3.</span> <span class="toc-text">Others</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">紅字整理</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)","url(/img/background9.jpg)","url(/img/background10.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
