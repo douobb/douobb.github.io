@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>電腦安全-L9 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Firewall characteristics and access policy  設計目標:  所有從內部到外部，以及從外部到內部的流量，都必須通過防火牆 只有依照本地 security policy 所定義的被授權的流量才會被允許通過 防火牆本身必須能抵抗入侵      Access Policy  在規劃與實作中的一個關鍵組成要素: 制定一個 suitable access policy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="電腦安全-L9">
+<meta property="og:url" content="http://example.com/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="Firewall characteristics and access policy  設計目標:  所有從內部到外部，以及從外部到內部的流量，都必須通過防火牆 只有依照本地 security policy 所定義的被授權的流量才會被允許通過 防火牆本身必須能抵抗入侵      Access Policy  在規劃與實作中的一個關鍵組成要素: 制定一個 suitable access policy">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/cover.jpg">
+<meta property="article:published_time" content="2026-05-11T11:04:21.000Z">
+<meta property="article:modified_time" content="2026-05-17T23:14:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="電腦安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '電腦安全-L9',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-05-18 07:14:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/cover.jpg')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">電腦安全-L9</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2026-05-11T11:04:21.000Z" title="發表於 2026-05-11 19:04:21">2026-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2026-05-17T23:14:00.000Z" title="更新於 2026-05-18 07:14:00">2026-05-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/%E8%B3%87%E5%B7%A5/">資工</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>9分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="電腦安全-L9"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Firewall characteristics and access policy</h1>
+<ul>
+<li>設計目標:
+<ul>
+<li>所有從內部到外部，以及從外部到內部的流量，都必須通過防火牆</li>
+<li>只有依照本地 security policy 所定義的被授權的流量才會被允許通過</li>
+<li>防火牆本身必須能抵抗入侵</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Access Policy
+<ul>
+<li>在規劃與實作中的一個關鍵組成要素: 制定一個 <code>suitable access policy</code></li>
+<li>列出哪些類型的流量是被授權允許的</li>
+<li>此政策是根據組織的資訊安全風險評估與安全政策所制定出來的</li>
+</ul>
+</li>
+</ul>
+<h2 id="characteristics-for-control-access">Characteristics for Control Access</h2>
+<blockquote>
+<p>使用不同的條件做 Control Access</p>
+</blockquote>
+<ul>
+<li><code>IP address</code> and <code>protocol values</code>
+<ul>
+<li>用於: <code>packet filter</code> and <code>stateful inspection</code> firewalls</li>
+<li>用來限制對特定服務的存取</li>
+</ul>
+</li>
+<li><code>Application protocol</code>
+<ul>
+<li>用於: <code>app-level gateway</code></li>
+<li>負責轉送並監控特定應用協定的資訊交換</li>
+<li>檢查 SMTP 電子郵件是否包含垃圾郵件</li>
+</ul>
+</li>
+<li><code>User identity</code>
+<ul>
+<li>使用安全認證技術 (ex: IPSec) 來辨識內部<code>使用者身份</code></li>
+</ul>
+</li>
+<li><code>Network activity</code>
+<ul>
+<li>考慮<code>時間或請求條件</code>
+<ul>
+<li>ex: 只允許在上班時間存取</li>
+</ul>
+</li>
+<li>分析請求頻率或行為模式
+<ul>
+<li>偵測掃描攻擊行為</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="capabilities-and-limitations">Capabilities and Limitations</h2>
+<ul>
+<li>Capabilities
+<ul>
+<li>單一管制點 (<code>choke point</code>): 可以阻擋未授權流量，並簡化管理</li>
+<li>一個用來監控安全相關事件的位置</li>
+<li>一個方便提供網路功能的平台
+<ul>
+<li>ex: NAT</li>
+</ul>
+</li>
+<li>也是 IPSec 的運作平台，用來實作 VPN</li>
+</ul>
+</li>
+<li>Limitations
+<ul>
+<li>無法防禦繞過防火牆的攻擊</li>
+<li>無法完全防止內部威脅</li>
+<li>若無線網路設定不安全，可能會被外部存取</li>
+<li>在外部感染的裝置，一旦接入內部網路就會被當作攻擊媒介使用</li>
+</ul>
+</li>
+</ul>
+<h1>Types of firewalls</h1>
+<h2 id="packet-filtering-firewall">Packet filtering firewall</h2>
+<ul>
+<li>對每一個進入與離開的 IP 封包套用一組規則
+<ul>
+<li>規則是根據封包在 IP 或 TCP 標頭中的資訊進行比對</li>
+<li>Matches: 決定是否要轉送或丟棄該封包</li>
+<li>No match: 採取預設動作
+<ul>
+<li>Discard: 除非明確允許，否則一律禁止</li>
+<li>Forward: 除非明確禁止，否則一律允許</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>過濾規則是基於網路封包中所包含的資訊
+<ul>
+<li>Source IP address</li>
+<li>Destination IP address</li>
+<li>Source and destination transport-level address</li>
+<li>IP protocol field</li>
+<li>Interface</li>
+</ul>
+</li>
+</ul>
+<h3 id="example">Example</h3>
+<ul>
+<li>目標: 允許進出的電子郵件流量，但封鎖所有其他流量
+<ul>
+<li>SMTP 使用 25 port</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Direction</th>
+<th>Src address</th>
+<th>Dest address</th>
+<th>Protocol</th>
+<th>Dest port</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>In</td>
+<td>External</td>
+<td>Internal</td>
+<td>TCP</td>
+<td>25</td>
+<td>Permit</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Out</td>
+<td>Internal</td>
+<td>External</td>
+<td>TCP</td>
+<td>&gt;1023</td>
+<td>Permit</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Out</td>
+<td>Internal</td>
+<td>External</td>
+<td>TCP</td>
+<td>25</td>
+<td>Permit</td>
+</tr>
+<tr>
+<td>4</td>
+<td>In</td>
+<td>External</td>
+<td>Internal</td>
+<td>TCP</td>
+<td>&gt;1023</td>
+<td>Permit</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Either</td>
+<td>Any</td>
+<td>Any</td>
+<td>Any</td>
+<td>Any</td>
+<td>Deny</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>What problems exist in this rule set?
+<ul>
+<li>Rule 4 允許外部流量進入內部，且目的 port 為 &gt;1023</li>
+<li>New Rule 4 允許外部主機用來源 port 25 向內部發送封包</li>
+<li>Rule 3/4 的本意: 讓任何內部主機都可以對外寄送郵件</li>
+</ul>
+</li>
+</ul>
+<h3 id="pros-and-cons">Pros and Cons</h3>
+<ul>
+<li>優點:
+<ul>
+<li>Simplicity</li>
+<li>Transparent to users and are very fast</li>
+</ul>
+</li>
+<li>缺點:
+<ul>
+<li>無法防止利用特定應用程式漏洞或功能的攻擊</li>
+<li>日誌記錄功能有限</li>
+<li>由於缺乏上層 (應用層) 功能，因此不支援進階的使用者身份驗證</li>
+<li>容易受到 TCP/IP 協定層問題的攻擊</li>
+<li>容易因為設定不當而導致安全漏洞</li>
+</ul>
+</li>
+</ul>
+<h3 id="possible-attacks">Possible Attacks</h3>
+<ul>
+<li><code>IP address spoofing</code>
+<ul>
+<li>攻擊者從外部發送封包，但將來源 IP 偽裝成內部主機的 IP 位址</li>
+<li>Countermeasure: 丟棄所有來源 IP 為內部網段的外部進入封包</li>
+</ul>
+</li>
+<li><code>Source routing attacks</code>
+<ul>
+<li>攻擊者指定封包應該經過的路徑 (source routing)</li>
+<li>Countermeasure: 丟棄所有使用 source routing 選項的封包</li>
+</ul>
+</li>
+<li><code>Tiny fragment attacks</code>
+<ul>
+<li>攻擊者利用 <code>IP fragmentation</code> 機制，將封包切成極小的碎片，迫使 TCP header 被拆到不同的封包片段中</li>
+<li>藉此繞過依賴 TCP header 判斷的防火牆規則</li>
+<li>Countermeasure: 強制第一個封包分片必須包含足夠的 <code>transport layer header</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="weakness">Weakness</h3>
+<ul>
+<li>以<code>單一封包</code>為單位做判斷與決策
+<ul>
+<li>不會考慮任何更高層的上下文資訊</li>
+</ul>
+</li>
+<li>對於 TCP 流量，必須<code>允許所有目的 port ≥ 1024 的進入流量</code>
+<ul>
+<li>Server port: &lt; 1024 (well-known)</li>
+<li>Client port: 1024 ~ 65535 (弱點來源)</li>
+</ul>
+</li>
+</ul>
+<h2 id="stateful-inspection-firewalls">Stateful Inspection Firewalls</h2>
+<ul>
+<li>建立對外 TCP 連線目錄 (connection table) 來加強 TCP 流量的規則控制
+<ul>
+<li>對每一個目前已建立的連線建立一筆紀錄</li>
+<li>只允許那些存在於紀錄中的連線所對應的 <code>high numbered ports</code> 的進入流量</li>
+<li>追蹤 TCP sequence number
+<ul>
+<li>藉此防止 <code>session hijacking</code> (連線劫持) 攻擊</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>有些還會檢查其他協定 (例如 FTP、SIPS 等)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Source Address</th>
+<th>Source Port</th>
+<th>Destination Address</th>
+<th>Destination Port</th>
+<th>Connection State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.100</td>
+<td>1030</td>
+<td>210.9.88.29</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>192.168.1.102</td>
+<td>1031</td>
+<td>216.32.42.123</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>192.168.1.101</td>
+<td>1033</td>
+<td>173.66.32.122</td>
+<td>25</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>192.168.1.106</td>
+<td>1035</td>
+<td>177.231.32.12</td>
+<td>79</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>223.43.21.231</td>
+<td>1990</td>
+<td>192.168.1.6</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>219.22.123.32</td>
+<td>2112</td>
+<td>192.168.1.6</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>210.99.212.18</td>
+<td>3321</td>
+<td>192.168.1.6</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>24.102.32.23</td>
+<td>1025</td>
+<td>192.168.1.6</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+<tr>
+<td>223.21.22.12</td>
+<td>1046</td>
+<td>192.168.1.6</td>
+<td>80</td>
+<td>Established</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-proxy-firewall">Application Proxy Firewall</h2>
+<ul>
+<li>一種負責轉送應用層流量的機制: app proxy
+<ul>
+<li>使用者透過 TCP/IP 應用程式 (例如 Telnet 或 FTP) 連接到代理伺服器</li>
+<li>代理伺服器再去連接遠端主機上的應用程式，並在雙方之間轉送 TCP 封包
+<ul>
+<li>形成兩條被 spliced (拼接) 起來的連線</li>
+</ul>
+</li>
+<li>必須針對特定應用程式撰寫對應的 proxy 程式碼</li>
+<li>可能會限制某些應用功能</li>
+</ul>
+</li>
+<li>優點:
+<ul>
+<li>比 <code>Packet filtering firewall</code> 更安全</li>
+<li>不依賴 TCP/IP 層級的各種封包組合來判斷安全性</li>
+</ul>
+</li>
+<li>缺點:
+<ul>
+<li>每一條連線都會增加額外的 <code>processing overhead</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="circuit-level-proxy-firewall">Circuit-level Proxy Firewall</h2>
+<ul>
+<li>將一條 TCP 連線拆分成兩段
+<ul>
+<li>形成兩條 TCP 連線</li>
+<li>將 TCP  segments 在兩條連線之間進行轉送</li>
+<li>不檢查封包內容</li>
+</ul>
+</li>
+<li>安全性主要在於決定哪些連線可以建立
+<ul>
+<li>通常用在<code>內部使用者被信任</code>的環境</li>
+</ul>
+</li>
+<li>減少應用層代理防火牆的負擔:
+<ul>
+<li>Inbound: app-level proxy firewall</li>
+<li>Outbound: circuit-level proxy</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/Firewalls.png" class="" title="Firewalls">
+<h3 id="socks">SOCKS</h3>
+<ul>
+<li>一個框架，讓 TCP/UDP 的 client-server 應用程式可以方便且安全地使用網路防火牆的服務
+<ul>
+<li>用戶端應用程式會先連線 SOCKS 伺服器，進行身分驗證，並送出轉送請求</li>
+<li>SOCKS 伺服器會評估該請求</li>
+</ul>
+</li>
+</ul>
+<h1>Firewall basing</h1>
+<h2 id="stand-alone-firewall-bastion-host">Stand-alone firewall (bastion host)</h2>
+<ul>
+<li>由防火牆管理員<code>指定的一個系統</code>，作為網路安全中的關鍵防禦強點
+<ul>
+<li>作為 app-level/circuit-level gateway 的運作平台</li>
+</ul>
+</li>
+<li>運行<code>安全強化的作業系統</code>，只提供必要服務
+<ul>
+<li>hardened (加固) 系統</li>
+</ul>
+</li>
+<li>可能需要使用者驗證才能存取該代理或主機</li>
+<li>Proxy 原則:
+<ul>
+<li>Can restrict features, hosts accessed</li>
+<li>Small, simple, checked for security</li>
+<li>Independent, non-privileged</li>
+<li>Limited disk use, hence read-only code</li>
+</ul>
+</li>
+</ul>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/BastionHost.png" class="" title="BastionHost">
+<h2 id="host-based-server-based-firewall">Host-based (Server-based) firewall</h2>
+<ul>
+<li><code>軟體模組</code>: 用來保護單一 host 的安全
+<ul>
+<li>在許多作業系統中都有提供: 以附加套件形式存在</li>
+<li>用來過濾並限制封包的流動</li>
+<li>常見部署位置: server</li>
+</ul>
+</li>
+<li>優點:
+<ul>
+<li>過濾規則可以依照該主機的環境進行客製化</li>
+<li>保護機制不依賴拓樸 (topology)</li>
+<li>提供額外的一層防護
+<ul>
+<li>通常會與 <code>stand-alone firewalls</code> 一起使用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="personal-firewall">Personal firewall</h2>
+<ul>
+<li>安裝在個人電腦上的<code>軟體模組</code>
+<ul>
+<li>可用於家庭與企業環境</li>
+<li>也可以內建在路由器中，用來保護所有連接該路由器的家用電腦</li>
+<li>比 server-based/stand-alone firewalls 更簡單</li>
+</ul>
+</li>
+<li>主要功能: <code>拒絕未授權的遠端存取</code>
+<ul>
+<li>也可以監控對外流量 (例如蠕蟲與惡意程式)</li>
+</ul>
+</li>
+<li>所有進入 (inbound) 的連線都會被拒絕，除非使用者明確允許</li>
+<li>對外 (outbound) 連線通常是允許的</li>
+</ul>
+<h1>Firewall location and configurations</h1>
+<h2 id="dmz-networks">DMZ Networks</h2>
+<blockquote>
+<p>Demilitarized Zone</p>
+</blockquote>
+<ul>
+<li>一個<code>與內部私有網路隔離的小型網路</code></li>
+<li>位於 DMZ 網路中的系統 (網站): 可以被外部存取，但仍需要一定的保護</li>
+</ul>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/DMZ.png" class="" title="DMZ">
+<h2 id="vpn">VPN</h2>
+<blockquote>
+<p>Virtual Private Networks</p>
+</blockquote>
+<ul>
+<li>由多台電腦所組成
+<ul>
+<li>透過相對不安全的網路進行互連</li>
+<li>利用<code>加密與特殊通訊協定</code>來提供安全性</li>
+</ul>
+</li>
+<li>在較低層的通訊協定中使用加密與身分驗證，以在不安全的網路上建立安全連線
+<ul>
+<li>在 IP 層最常見的協定是 <code>IPSec</code></li>
+</ul>
+</li>
+</ul>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/VPN.png" class="" title="VPN">
+<h2 id="distributed-firewalls">Distributed firewalls</h2>
+<ul>
+<li><code>Local protection</code>: 用來對抗內部攻擊
+<ul>
+<li>可針對特定機器與應用程式進行客製化設定</li>
+<li>在數百台伺服器與工作站上部署 <code>Host-based firewalls</code></li>
+<li>在本地與遠端使用者系統上部署 <code>Personal firewalls</code></li>
+</ul>
+</li>
+<li><code>Global protection</code>: 同時對抗內部與外部攻擊
+<ul>
+<li><code>Stand-alone firewalls</code></li>
+</ul>
+</li>
+<li>可能同時使用內部與外部 DMZ</li>
+<li><code>外部 DMZ</code>: 防護較少 (Web servers)
+<ul>
+<li>通常不包含高敏感資訊</li>
+<li>仍由 host-based firewalls 保護</li>
+</ul>
+</li>
+<li>需要安全監控</li>
+</ul>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/DistributedFirewalls.png" class="" title="DistributedFirewalls">
+<h2 id="summary-of-firewall-locations-and-topologies">Summary of firewall locations and topologies</h2>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/Summary.png" class="" title="Summary">
+<h1>Intrusion prevention systems</h1>
+<blockquote>
+<p>IPS</p>
+</blockquote>
+<ul>
+<li>IPS 是 IDS (入侵偵測系統) 的延伸: 可以<code>阻擋或防止</code>已偵測到的惡意活動</li>
+<li>和 IDS 類似
+<ul>
+<li>Types: host-based, network-based, or distributed/hybrid</li>
+<li>Approaches: anomaly detection, or signature/heuristic detection</li>
+</ul>
+</li>
+</ul>
+<h2 id="host-based-ips">Host-based IPS</h2>
+<blockquote>
+<p>HIPS</p>
+</blockquote>
+<ul>
+<li><code>Anomaly detection</code>: 行為模式是否屬於正常合法使用者</li>
+<li><code>Signature/heuristic detection</code>: 尋找已被識別為惡意的行為模式</li>
+<li>功能可以依不同平台進行客製化
+<ul>
+<li>可用於一般桌面或伺服器系統</li>
+<li>也可針對特定伺服器提供保護</li>
+</ul>
+</li>
+<li>Alternative solution: a sandbox approach
+<ul>
+<li>適用於行動程式碼，例如 Java applets 或腳本語言</li>
+<li>將這些程式隔離在系統的受控區域</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-role-of-hips">The Role of HIPS</h3>
+<ul>
+<li>駭客與犯罪者的主要攻擊目標: enterprise endpoint
+<ul>
+<li>包括桌面電腦與筆記型電腦系統</li>
+<li>相較於網路設備更常成為攻擊目標</li>
+</ul>
+</li>
+<li>資安廠商越來越專注於 endpoint 安全產品
+<ul>
+<li>提供整合式的單一產品套件</li>
+<li>防毒、反間諜軟體、反垃圾郵件與個人防火牆</li>
+</ul>
+</li>
+<li>優點:
+<ul>
+<li>多種安全工具可以緊密協作</li>
+<li>威脅防護更加完整</li>
+<li>管理也更容易</li>
+</ul>
+</li>
+<li>If HIPS is sophisticated enough, can we get rid of network-level devices?</li>
+</ul>
+<h3 id="defense-in-depth">Defense in Depth</h3>
+<blockquote>
+<p>DiD</p>
+</blockquote>
+<ul>
+<li>一系列防禦機制以<code>分層方式</code>保護重要的資料與資訊
+<ul>
+<li>這是一種多層次的方法，並且刻意設計冗餘機制</li>
+<li>如果某一層防護失效，另一層會立即補上以阻擋攻擊</li>
+</ul>
+</li>
+<li>將 HIPS 作為 DiD 策略中的一個組成元素
+<ul>
+<li>並與 <code>network-level devices</code> 一起使用，例如防火牆與 network-based IPS</li>
+</ul>
+</li>
+</ul>
+<h2 id="network-based-ips">Network-based IPS</h2>
+<blockquote>
+<p>NIPS</p>
+</blockquote>
+<ul>
+<li><code>Inline</code> with NIDS: 可以修改或丟棄封包，甚至中斷 TCP 連線
+<ul>
+<li>Approaches: anomaly detection, or signature/heuristic detection</li>
+</ul>
+</li>
+</ul>
+<h2 id="distributed-or-hybrid-ips">Distributed or Hybrid IPS</h2>
+<img src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/WormsDetection.png" class="" title="WormsDetection">
+<h1>紅字整理</h1>
+<div class="note primary no-icon flat"><p>P38: The Role of HIPS, <code>If HIPS is sophisticated enough, can we get rid of network-level devices?</code></p>
+<ul>
+<li>考慮 <code>Defense in Depth (Did)</code>
+<ul>
+<li>應該以<code>分層方式</code>保護重要的資料與資訊</li>
+<li>配合 <code>network-level devices</code> 一起使用</li>
+</ul>
+</li>
+</ul>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>電腦安全-L9</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2026/05/11/電腦安全-L9/">https://douobb.github.io/2026/05/11/電腦安全-L9/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2026-05-11</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2026-05-18</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8/">電腦安全</a></div><div class="post_share"><div class="social-share" data-image="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L9/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L8/" title="電腦安全-L8"><img class="cover" src="/2026/05/11/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L8/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">電腦安全-L8</div></div></a></div><div class="next-post pull-right"><a href="/2026/05/15/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86-%E8%A3%9C%E8%80%83/" title="影像處理-補考"><img class="cover" src="/2026/05/15/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86-%E8%A3%9C%E8%80%83/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">影像處理-補考</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/" title="電腦安全-L1"><img class="cover" src="/2026/03/03/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L1/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-03</div><div class="title">電腦安全-L1</div></div></a></div><div><a href="/2026/05/18/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L10/" title="電腦安全-L10"><img class="cover" src="/2026/05/18/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L10/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-18</div><div class="title">電腦安全-L10</div></div></a></div><div><a href="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/" title="電腦安全-L2"><img class="cover" src="/2026/03/09/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L2/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-09</div><div class="title">電腦安全-L2</div></div></a></div><div><a href="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/" title="電腦安全-L22"><img class="cover" src="/2026/03/10/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L22/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-10</div><div class="title">電腦安全-L22</div></div></a></div><div><a href="/2026/04/12/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L23/" title="電腦安全-L23"><img class="cover" src="/2026/04/12/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L23/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-12</div><div class="title">電腦安全-L23</div></div></a></div><div><a href="/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/" title="電腦安全-L24"><img class="cover" src="/2026/03/25/%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8-L24/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-25</div><div class="title">電腦安全-L24</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Firewall characteristics and access policy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#characteristics-for-control-access"><span class="toc-number">1.1.</span> <span class="toc-text">Characteristics for Control Access</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#capabilities-and-limitations"><span class="toc-number">1.2.</span> <span class="toc-text">Capabilities and Limitations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Types of firewalls</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#packet-filtering-firewall"><span class="toc-number">2.1.</span> <span class="toc-text">Packet filtering firewall</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">2.1.1.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pros-and-cons"><span class="toc-number">2.1.2.</span> <span class="toc-text">Pros and Cons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#possible-attacks"><span class="toc-number">2.1.3.</span> <span class="toc-text">Possible Attacks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#weakness"><span class="toc-number">2.1.4.</span> <span class="toc-text">Weakness</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stateful-inspection-firewalls"><span class="toc-number">2.2.</span> <span class="toc-text">Stateful Inspection Firewalls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#application-proxy-firewall"><span class="toc-number">2.3.</span> <span class="toc-text">Application Proxy Firewall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#circuit-level-proxy-firewall"><span class="toc-number">2.4.</span> <span class="toc-text">Circuit-level Proxy Firewall</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#socks"><span class="toc-number">2.4.1.</span> <span class="toc-text">SOCKS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">Firewall basing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#stand-alone-firewall-bastion-host"><span class="toc-number">3.1.</span> <span class="toc-text">Stand-alone firewall (bastion host)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#host-based-server-based-firewall"><span class="toc-number">3.2.</span> <span class="toc-text">Host-based (Server-based) firewall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#personal-firewall"><span class="toc-number">3.3.</span> <span class="toc-text">Personal firewall</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">Firewall location and configurations</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dmz-networks"><span class="toc-number">4.1.</span> <span class="toc-text">DMZ Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vpn"><span class="toc-number">4.2.</span> <span class="toc-text">VPN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#distributed-firewalls"><span class="toc-number">4.3.</span> <span class="toc-text">Distributed firewalls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#summary-of-firewall-locations-and-topologies"><span class="toc-number">4.4.</span> <span class="toc-text">Summary of firewall locations and topologies</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">Intrusion prevention systems</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#host-based-ips"><span class="toc-number">5.1.</span> <span class="toc-text">Host-based IPS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#the-role-of-hips"><span class="toc-number">5.1.1.</span> <span class="toc-text">The Role of HIPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#defense-in-depth"><span class="toc-number">5.1.2.</span> <span class="toc-text">Defense in Depth</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#network-based-ips"><span class="toc-number">5.2.</span> <span class="toc-text">Network-based IPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#distributed-or-hybrid-ips"><span class="toc-number">5.3.</span> <span class="toc-text">Distributed or Hybrid IPS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">紅字整理</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)","url(/img/background9.jpg)","url(/img/background10.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
