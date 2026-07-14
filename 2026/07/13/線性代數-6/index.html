@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>線性代數-6 | douobb</title><meta name="author" content="douobb"><meta name="copyright" content="douobb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="考研相關文章參考資料為 wjungle 大神提供的筆記  Ch6 Jordan form 及其應用 這章可以跳著讀，重點為 Cayley-Hamilton theorem 及其應用  冪零算子定義  設 $T: V \to V$ 為線性算子。若存在正整數 $k \in \mathbb{Z}^{+}$，使得 $T^{k} &#x3D; 0$ 則稱 $T$ 為nilpotent operator (冪零算子)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="線性代數-6">
+<meta property="og:url" content="http://example.com/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/index.html">
+<meta property="og:site_name" content="douobb">
+<meta property="og:description" content="考研相關文章參考資料為 wjungle 大神提供的筆記  Ch6 Jordan form 及其應用 這章可以跳著讀，重點為 Cayley-Hamilton theorem 及其應用  冪零算子定義  設 $T: V \to V$ 為線性算子。若存在正整數 $k \in \mathbb{Z}^{+}$，使得 $T^{k} &#x3D; 0$ 則稱 $T$ 為nilpotent operator (冪零算子)。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/cover.png">
+<meta property="article:published_time" content="2026-07-13T00:13:22.000Z">
+<meta property="article:modified_time" content="2026-07-14T06:50:00.000Z">
+<meta property="article:author" content="douobb">
+<meta property="article:tag" content="線性代數">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: douobb","link":"連結: ","source":"來源: douobb","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '線性代數-6',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-07-14 14:50:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/143181701?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">116</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/cover.png')"><nav id="nav"><span id="blog-info"><a id="site-name" href="/">douobb</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-lg"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">線性代數-6</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2026-07-13T00:13:22.000Z" title="發表於 2026-07-13 08:13:22">2026-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2026-07-14T06:50:00.000Z" title="更新於 2026-07-14 14:50:00">2026-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%80%83%E7%A0%94/%E7%B7%9A%E4%BB%A3/">線代</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>12分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="線性代數-6"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note info flat"><p>考研相關文章參考資料為 <code>wjungle</code> 大神提供的筆記</p>
+</div>
+<h1 id="Ch6-Jordan-form-及其應用"><a href="#Ch6-Jordan-form-及其應用" class="headerlink" title="Ch6 Jordan form 及其應用"></a>Ch6 Jordan form 及其應用</h1><blockquote>
+<p>這章可以跳著讀，重點為 <code>Cayley-Hamilton theorem</code> 及其應用</p>
+</blockquote>
+<h2 id="冪零算子"><a href="#冪零算子" class="headerlink" title="冪零算子"></a>冪零算子</h2><mark class="hl-label default">定義</mark> 
+<p>設 $T: V \to V$ 為線性算子。若存在正整數 $k \in \mathbb{Z}^{+}$，使得 $T^{k} = 0$</p>
+<p>則稱 $T$ 為<code>nilpotent operator</code> (冪零算子)。</p>
+<p>其中，使 $T^{k}=0$ 成立的最小正整數 $k$，稱為 $T$ 的<code>index</code> (冪零指數)。</p>
+<p>例如若 $A$ 為 $n \times n$ 的嚴格下三角矩陣或嚴格上三角矩陣:</p>
+<script type="math/tex; mode=display">
+A=
+\begin{bmatrix}
+0 & 0 & \cdots & 0\\
+* & 0 & \cdots & 0\\
+\vdots & \ddots & \ddots & \vdots\\
+* & \cdots & * & 0
+\end{bmatrix}
+\quad \text{or} \quad
+A=
+\begin{bmatrix}
+0 & * & \cdots & *\\
+0 & 0 & \ddots & \vdots\\
+\vdots & \ddots & \ddots & *\\
+0 & \cdots & 0 & 0
+\end{bmatrix}</script><p>則必有 $A^{n}=0$</p>
+<mark class="hl-label default">Note</mark> 
+<p>$T$: nilpotent with index $k$</p>
+<p>$\Longleftrightarrow T^{k}=0 \quad \text{且} \quad T^{k-1}\ne 0$</p>
+<p>$\Longleftrightarrow \ker(T^{k})=V \quad \text{且} \quad \ker(T^{k-1})\ne V$</p>
+<mark class="hl-label default">定義</mark> 
+<ul>
+<li>定義 $S_k$ 為 $k \times k$ matrix:</li>
+</ul>
+<script type="math/tex; mode=display">
+S_k=
+\begin{bmatrix}
+0 & 0 & \cdots & 0\\
+1 & 0 & \ddots & \vdots\\
+0 & \ddots & \ddots & 0\\
+0 & \cdots & 1 & 0
+\end{bmatrix}_{k \times k}</script><ul>
+<li>定義 $S_k^T$ 為 $k \times k$ matrix:</li>
+</ul>
+<script type="math/tex; mode=display">
+S_k^T=
+\begin{bmatrix}
+0 & 1 & \cdots & 0\\
+0 & 0 & \ddots & \vdots\\
+\vdots & \ddots & \ddots & 1\\
+0 & \cdots & 0 & 0
+\end{bmatrix}_{k \times k}</script><hr>
+<mark class="hl-label default">定義</mark> 
+<p>設 $T: V \to V$ 為 linear operator，$W$ 為 $T$-invariant subspace</p>
+<ul>
+<li><p>若 $T_W$ <code>可逆</code>，稱 $T$ 在 $W$ 上局部可逆，且 $W$ 為<code>可逆區</code>。</p>
+</li>
+<li><p>若 $T_W$ 為 <code>nilpotent</code>，稱 $T$ 在 $W$ 上局部冪零，且 $W$ 為<code>冪零區</code>。</p>
+</li>
+</ul>
+<mark class="hl-label default">Note</mark> 
+<ul>
+<li>若 $W=\ker(T)$，則 $T_W=0$: nilpotent。</li>
+<li>若 $W=\ker(T^2)$，則 $(T_W)^2=0$: nilpotent。</li>
+<li>若 $W=\ker(T^k)$，則 $(T_W)^k=0$。</li>
+<li>最大冪零區 $=\ker(T^\infty)$。</li>
+</ul>
+<mark class="hl-label default">Lemma</mark> 
+<p>若 $\ker(T^k)=\ker(T^{k+1})$<br>則 $\ker(T^{k+1})=\ker(T^{k+2})=\cdots$</p>
+<mark class="hl-label default">定理</mark> 
+<p><code>kernel chain</code>:<br>設 $T: V \to V$ 為 linear operator，且 $\dim(V)=n&lt;\infty$。</p>
+<ul>
+<li><p>${0}\subseteq \ker(T)\subseteq \ker(T^2)\subseteq \cdots \subseteq V$</p>
+</li>
+<li><p>存在最小 $k\in \mathbb{Z}^{+}$，使得 $\ker(T^k)=\ker(T^{k+1})=\cdots$</p>
+</li>
+<li><p>$W=\bigcup_{i=1}^{\infty}\ker(T^i)=\ker(T^k)$ 為最大冪零區。</p>
+</li>
+</ul>
+<mark class="hl-label default">定理</mark> 
+<p><code>image chain</code>:<br>設 $T: V \to V$ 為 linear operator，且 $\dim(V)=n&lt;\infty$。</p>
+<ul>
+<li><p>$V\supseteq \operatorname{Im}(T)\supseteq \operatorname{Im}(T^2)\supseteq \cdots \supseteq {0}$</p>
+</li>
+<li><p>存在最小 $k\in \mathbb{Z}^{+}$，使得 $\operatorname{Im}(T^k)=\operatorname{Im}(T^{k+1})=\cdots$</p>
+</li>
+<li><p>$W=\bigcap_{i=1}^{\infty}\operatorname{Im}(T^i)=\operatorname{Im}(T^k)$ 為最大可逆區。</p>
+</li>
+</ul>
+<mark class="hl-label default">Note</mark> 
+<p>$\ker(T^k)=\ker(T^{k+1})$<br>$\Longleftrightarrow \operatorname{nullity}(T^k)=\operatorname{nullity}(T^{k+1})$<br>$\Longleftrightarrow \operatorname{rank}(T^k)=\operatorname{rank}(T^{k+1})$<br>$\Longleftrightarrow \operatorname{Im}(T^k)=\operatorname{Im}(T^{k+1})$</p>
+<p>即 <code>kernel chain</code> 與 <code>image chain</code> 中斷點為同一點。</p>
+<hr>
+<mark class="hl-label default">定理</mark> 
+<p>設 $A$ 為 $n\times n$ matrix。<br>$A: \text{nilpotent}\Longleftrightarrow A$ 之所有 eigenvalues 皆為 $0$</p>
+<mark class="hl-label default">Note</mark> 
+<ul>
+<li><code>可逆</code>: 所有 eigenvalues 都不為 $0$。</li>
+<li><code>nilpotent</code>: 所有 eigenvalues 皆為 $0$。</li>
+</ul>
+<mark class="hl-label default">定理</mark> 
+<p>設 $T: V\to V$ 為 nilpotent operator with index $k$。</p>
+<p>則存在 $\vec{v}\in V$，使得 $\beta={\vec{v},T(\vec{v}),T^2(\vec{v}),\ldots,T^{k-1}(\vec{v})}$ 為 LI。</p>
+<mark class="hl-label default">Note</mark> 
+<p>只要 $\vec{v}\in \ker(T^k)-\ker(T^{k-1})$</p>
+<p>則 $\beta={\vec{v},T(\vec{v}),\ldots,T^{k-1}(\vec{v})}$ 為 LI，稱為 $\operatorname{heig}(\vec{v})=k$。</p>
+<h2 id="廣義特徵鍊"><a href="#廣義特徵鍊" class="headerlink" title="廣義特徵鍊"></a>廣義特徵鍊</h2><mark class="hl-label default">定義</mark> 
+<p>設 $\lambda$ 為 $A$ 之 eigenvalue。</p>
+<p>若 $x\ne 0$ 且滿足</p>
+<ul>
+<li>$(A-\lambda I)^m x=0$</li>
+<li>$(A-\lambda I)^{m-1}x\ne 0$</li>
+</ul>
+<p>則稱 $x$ 為 $A$ 之 $m$ 階 <code>generalized eigenvector</code> (廣義特徵)。</p>
+<ul>
+<li>$m=1$ 時 $(A-\lambda I)x=0$，此時 $x$ 即為 eigenvector。</li>
+</ul>
+<mark class="hl-label default">定義</mark> 
+<p>設 $\lambda$ 為 $A$ 之 eigenvalue，且 $x_1$ 為 eigenvector with eigenvalue $\lambda$。</p>
+<p>若 $x_1,x_2,\ldots,x_k$ 滿足</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(A-\lambda I)x_2&=x_1\\
+(A-\lambda I)x_3&=x_2\\
+&\vdots\\
+(A-\lambda I)x_k&=x_{k-1}
+\end{aligned}</script><p>則稱 ${x_1,x_2,\ldots,x_k}$ 為 $\lambda$ 之 <code>generalized eigenvector chain</code> (廣義特徵鏈)。</p>
+<h2 id="Dot-diagram"><a href="#Dot-diagram" class="headerlink" title="Dot diagram"></a>Dot diagram</h2><p><code>Dot diagram</code> 用法:</p>
+<p>設 $N_\lambda=A-\lambda I$。</p>
+<ul>
+<li>先算 $\operatorname{nullity}(N<em>\lambda),\operatorname{nullity}(N</em>\lambda^2),\operatorname{nullity}(N_\lambda^3),\ldots$，直到數值不再增加。</li>
+<li>令 $d<em>j=\operatorname{nullity}(N</em>\lambda^j)-\operatorname{nullity}(N<em>\lambda^{j-1})$，其中 $\operatorname{nullity}(N</em>\lambda^0)=0$。</li>
+<li>$d_j$ 表示第 $j$ 欄有幾個點。</li>
+<li>每一列點數就是一個 Jordan block 的 size。</li>
+</ul>
+<p>因此:</p>
+<ul>
+<li><code>gm</code>$(\lambda)=\operatorname{nullity}(A-\lambda I)$ = dot diagram 的列數 = Jordan blocks 個數。</li>
+<li><code>am</code>$(\lambda)$ = dot diagram 的總點數。</li>
+<li>第一列點數 = 最大 Jordan block size = $m_A(x)$ 中 $(x-\lambda)$ 的次方。</li>
+</ul>
+<mark class="hl-label default">Example</mark> 
+<p>設 $A$ 為 square matrix。</p>
+<p>對 $\lambda=2$:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\operatorname{nullity}(A-2I)&=4\\
+\operatorname{nullity}((A-2I)^2)&=6\\
+\operatorname{nullity}((A-2I)^3)&=8\\
+\operatorname{nullity}((A-2I)^4)&=9\\
+\operatorname{nullity}((A-2I)^5)&=10\\
+\operatorname{nullity}((A-2I)^6)&=10
+\end{aligned}</script><p>則 $d_1=4, d_2=2, d_3=2, d_4=1, d_5=1$</p>
+<p>所以 dot diagram 的列長為 $5,3,1,1$，即 $J_5(2), J_3(2), J_1(2), J_1(2)$</p>
+<p>故 $\operatorname{am}(2)=10, \operatorname{gm}(2)=4$</p>
+<p>對 $\lambda=3$，若 dot diagram 的列長為 $2,2,1,1,1$，則 $J_2(3), J_2(3), J_1(3), J_1(3), J_1(3)$</p>
+<p>且 $\operatorname{am}(3)=7, \operatorname{gm}(3)=5$</p>
+<p>因此 $J=J_5(2)\oplus J_3(2)\oplus J_1(2)\oplus J_1(2)\oplus J_2(3)\oplus J_2(3)\oplus J_1(3)\oplus J_1(3)\oplus J_1(3)$</p>
+<p>且 $P_A(t)=(-1)^{17}(t-2)^{10}(t-3)^7=-(t-2)^{10}(t-3)^7$</p>
+<h2 id="Jordan-form"><a href="#Jordan-form" class="headerlink" title="Jordan form"></a>Jordan form</h2><mark class="hl-label default">定義</mark> 
+<p><code>Jordan Block</code>:</p>
+<script type="math/tex; mode=display">
+J_m(\lambda)=
+\begin{bmatrix}
+\lambda & 1 & 0 & \cdots & 0\\
+0 & \lambda & 1 & \ddots & \vdots\\
+\vdots & \ddots & \ddots & \ddots & 0\\
+0 & \cdots & 0 & \lambda & 1\\
+0 & \cdots & \cdots & 0 & \lambda
+\end{bmatrix}_{m\times m}
+=\lambda I_m+S_m</script><mark class="hl-label default">定義</mark> 
+<p><code>Jordan Form</code>:</p>
+<script type="math/tex; mode=display">
+J=
+\begin{bmatrix}
+J_{n_1}(\lambda_1) & & & 0\\
+& J_{n_2}(\lambda_2) & & \\
+& & \ddots & \\
+0 & & & J_{n_k}(\lambda_k)
+\end{bmatrix}</script><p>即 $J=J<em>{n_1}(\lambda_1)\oplus J</em>{n<em>2}(\lambda_2)\oplus\cdots\oplus J</em>{n_k}(\lambda_k)$</p>
+<ul>
+<li>Jordan Form 排列時:<ul>
+<li>$\lambda$ 由大排到小</li>
+<li>同一個 $\lambda$ 下，$J_n(\lambda)$ 的 $n$ 也由大排到小。</li>
+</ul>
+</li>
+</ul>
+<mark class="hl-label default">定理</mark> 
+<p>任意方陣 over $\mathbb{C}$ 皆可喬登化。</p>
+<ul>
+<li>對角化 $A\sim D$: 存在 invertible matrix $P$，使得 $P^{-1}AP=D$</li>
+<li><code>喬登化</code> $A\sim J$: 存在 invertible matrix $P$，使得 $P^{-1}AP=J$</li>
+</ul>
+<mark class="hl-label default">定義</mark> 
+<p>設 $A$ 為 $n\times n$ matrix。</p>
+<p>若 $A\sim J$，且 $J$ 為 Jordan form，則稱 $J$ 為 $A$ 之 <code>Jordan form</code>，記作 $J_A$。</p>
+<ul>
+<li>$J_A$ <code>唯一</code>。</li>
+</ul>
+<mark class="hl-label default">定理</mark> 
+<p>$A\sim B\Longleftrightarrow J_A=J_B$</p>
+<h2 id="Cayley-Hamilton-定理"><a href="#Cayley-Hamilton-定理" class="headerlink" title="Cayley-Hamilton 定理"></a>Cayley-Hamilton 定理</h2><mark class="hl-label default">定理</mark> 
+<p>設 $A$ 為 $n\times n$ matrix，且 $P_A(x)=\det(A-xI)$<br>則 $P_A(A)=0$</p>
+<ul>
+<li>$0$ 為 <code>zero matrix</code>。</li>
+</ul>
+<mark class="hl-label blue">證明</mark> 
+<p>令 $P<em>A(x)=(-1)^n x^n+a</em>{n-1}x^{n-1}+\cdots+a_1x+a_0$</p>
+<p>由 $(A-xI)\operatorname{adj}(A-xI)=\det(A-xI)I$</p>
+<p>令 $\operatorname{adj}(A-xI)=A<em>{n-1}x^{n-1}+A</em>{n-2}x^{n-2}+\cdots+A_1x+A_0$</p>
+<ul>
+<li>其中 $A_{n-1},\ldots,A_1,A_0$ 皆為 $n\times n$ matrix</li>
+</ul>
+<p>代入得 $(A-xI)(A<em>{n-1}x^{n-1}+A</em>{n-2}x^{n-2}+\cdots+A<em>1x+A_0)=\left[(-1)^n x^n+a</em>{n-1}x^{n-1}+\cdots+a_1x+a_0\right]I$</p>
+<p>比較係數:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+-A_{n-1}&=(-1)^n I\\
+AA_{n-1}-A_{n-2}&=a_{n-1}I\\
+AA_{n-2}-A_{n-3}&=a_{n-2}I\\
+&\vdots\\
+AA_1-A_0&=a_1I\\
+AA_0&=a_0I
+\end{aligned}</script><p>分別右乘 $A^n,A^{n-1},A^{n-2},\ldots,A,I$ 後相加，得 $0=(-1)^nA^n+a_{n-1}A^{n-1}+\cdots+a_1A+a_0I=P_A(A)$</p>
+<mark class="hl-label default">Note</mark> 
+<p>設 $A$ 為 $n\times n$ matrix，且 $r(x)=r<em>0+r_1x+\cdots+r</em>{n-1}x^{n-1}$</p>
+<p>則 $f(A)=r(A)=r<em>0I+r_1A+\cdots+r</em>{n-1}A^{n-1}$</p>
+<p>因此 $f(A)\in \operatorname{span}{I,A,A^2,\ldots,A^{n-1}}$</p>
+<p>且 $\dim\left(\operatorname{span}{I,A,A^2,\ldots,A^{n-1}}\right)\le n$</p>
+<hr>
+<mark class="hl-label default">Note</mark> 
+<p>應用方式 1:<br>設 $A$ 為 $n\times n$ matrix，$f(x)\in P$。</p>
+<p>若 $f(x)=g(x)P_A(x)+r(x),\quad \deg(r(x))&lt;\deg(P_A(x))=n$</p>
+<p>則 $f(A)=g(A)P_A(A)+r(A)=r(A)$</p>
+<mark class="hl-label default">Note</mark> 
+<p>應用方式 2:<br><code>泰勒展開</code>:<br>若 $P_A(x)=(x-\lambda)^m$，要求 $f(A)$，可將 $f(x)$ 對 $x=\lambda$ 作 <code>Taylor expansion</code>，取 degree $&lt;m$ 的部分作為 $r(x)$。</p>
+<ul>
+<li><code>Taylor expansion</code>: $f(x)=f(\lambda)+f’(\lambda)(x-\lambda)+\frac{f’’(\lambda)}{2!}(x-\lambda)^2+\cdots+\frac{f^{(m-1)}(\lambda)}{(m-1)!}(x-\lambda)^{m-1}+\cdots$</li>
+</ul>
+<img src="/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/EX-1.png" class="" title="EX-1">
+<img src="/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/EX-2.png" class="" title="EX-2">
+<mark class="hl-label default">Note</mark> 
+<p>若 $A$ 為 $n\times n$ invertible matrix，且 $P<em>A(x)=(-1)^nx^n+a</em>{n-1}x^{n-1}+\cdots+a_1x+a_0$</p>
+<p>則 $a_0=\det(A)\ne 0$</p>
+<p>由 <code>Cayley-Hamilton theorem</code>: $0=P<em>A(A)=(-1)^nA^n+a</em>{n-1}A^{n-1}+\cdots+a_1A+a_0I$</p>
+<p>所以 $A\left(\frac{(-1)^nA^{n-1}+a_{n-1}A^{n-2}+\cdots+a_1I}{-a_0}\right)=I$</p>
+<p>因此 $A^{-1}=\frac{1}{-a<em>0}\left[(-1)^nA^{n-1}+a</em>{n-1}A^{n-2}+\cdots+a_1I\right]$</p>
+<p>也就是 $A^{-1}\in \operatorname{span}{I,A,\ldots,A^{n-1}} $</p>
+<p>故 $A^{-1}=g(A)$。</p>
+<ul>
+<li>應用: 證明上三角反矩陣仍為上三角</li>
+</ul>
+<h2 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h2><mark class="hl-label default">定理</mark> 
+<p><code>質因式分解定理</code>:</p>
+<ul>
+<li>$g(t)$ 與 $h(t)$ 互質，且兩者次數至少為 1</li>
+<li>$f(A)=g(A)h(A)=0$</li>
+</ul>
+<p>則 $V=N(g(A))\oplus N(h(A))$</p>
+<mark class="hl-label default">定理</mark> 
+<p><code>Primary Decomposition Theorem</code>:</p>
+<p>考慮 over $\mathbb{C}$，令 $f(t)=(t-u_1)^{m_1}(t-u_2)^{m_2}\cdots(t-u_k)^{m_k}$</p>
+<ul>
+<li>$u_1,\ldots,u_k$ 全相異，且不一定要是 eigenvalue</li>
+</ul>
+<p>若 $f(A)=0_{n\times n}$</p>
+<p>則 $V=N((A-u_1I)^{m_1})\oplus N((A-u_2I)^{m_2})\oplus\cdots\oplus N((A-u_kI)^{m_k})$</p>
+<mark class="hl-label default">Note</mark> 
+<p>結合 <code>Cayley-Hamilton theorem</code>:</p>
+<p>在 $\mathbb{C}$ 之中，若 $P_A(t)=(t-\lambda_1)^{n_1}\cdots(t-\lambda_k)^{n_k}$，其中 $n_1+\cdots+n_k=n$。</p>
+<p>令 $f(t)=P_A(t)$，則 $f(A)=P_A(A)=0$。</p>
+<p>故 $V=N((A-\lambda_1I)^{n_1})\oplus\cdots\oplus N((A-\lambda_kI)^{n_k})$</p>
+<mark class="hl-label default">定理</mark> 
+<p><code>Lagrange-Sylvester Interpolation Formula</code>:</p>
+<p>令</p>
+<script type="math/tex; mode=display">
+J_n(\lambda)=
+\begin{bmatrix}
+\lambda & 1 & 0 & \cdots & 0\\
+0 & \lambda & 1 & \ddots & \vdots\\
+\vdots & \ddots & \ddots & \ddots & 0\\
+0 & \cdots & 0 & \lambda & 1\\
+0 & \cdots & \cdots & 0 & \lambda
+\end{bmatrix}</script><p>則</p>
+<script type="math/tex; mode=display">
+f(J_n(\lambda))=
+\begin{bmatrix}
+f(\lambda) & f'(\lambda) & \frac{f''(\lambda)}{2!} & \cdots & \frac{f^{(n-1)}(\lambda)}{(n-1)!}\\
+0 & f(\lambda) & f'(\lambda) & \ddots & \vdots\\
+\vdots & \ddots & \ddots & \ddots & \frac{f''(\lambda)}{2!}\\
+0 & \cdots & 0 & f(\lambda) & f'(\lambda)\\
+0 & \cdots & \cdots & 0 & f(\lambda)
+\end{bmatrix}</script><ul>
+<li>若 $f(x)=\sum_{m=-\infty}^{\infty}a_mx^m$，且 RoC 為 $x\in I$，則所有 $\lambda$ 須在 $I$ 之中。</li>
+</ul>
+<h2 id="極小多項式"><a href="#極小多項式" class="headerlink" title="極小多項式"></a>極小多項式</h2><mark class="hl-label default">定義</mark> 
+<p>設 $A\in \mathbb{C}^{n\times n}$，$m(x)\in P$ 滿足:</p>
+<ul>
+<li>$m(x)$ 為 <code>monic</code>。<ul>
+<li>首項係數為 1</li>
+</ul>
+</li>
+<li>$m(A)=0$。</li>
+<li>若 $f(A)=0$，則 $\deg(m(x))\le \deg(f(x))$。</li>
+</ul>
+<p>稱 $m(x)$ 為 $A$ 之 <code>minimal polynomial</code>。</p>
+<ul>
+<li>考慮所有滿足 $f(A)=0_n$ 之 <code>monic</code> 多項式，degree 最小者稱為 $A$ 之 <code>minimal polynomial</code>。</li>
+<li>給定 $A$，其 <code>minimal polynomial</code> 唯一存在，記作 $m_A(x)$。</li>
+</ul>
+<mark class="hl-label default">定理</mark> 
+<p>設 $A$ 為 $n\times n$ matrix，$m(x)$ 為 $A$ 之 <code>minimal polynomial</code>。</p>
+<ul>
+<li>若 $f(A)=0$，則 $m(x)\mid f(x)$。<ul>
+<li>根據除法定理，若不整除則可找到餘式 degree 更小且為 0</li>
+</ul>
+</li>
+<li>$m(x)\mid P_A(x)$。</li>
+<li>若 $\lambda\in\lambda(A)$，則 $(x-\lambda)\mid m(x)$。<ul>
+<li>若 $\lambda\in\lambda(A)$，則 $m(\lambda)=0$。</li>
+</ul>
+</li>
+<li>若 $P_A(x)=(-1)^n(x-\lambda_1)^{m_1}\cdots(x-\lambda_r)^{m_r}$，則 $m(x)=(x-\lambda_1)^{k_1}\cdots(x-\lambda_r)^{k_r},\quad 1\le k_i\le m_i$</li>
+</ul>
+<hr>
+<mark class="hl-label default">定理</mark> 
+<p>設 $A$ 為 $n\times n$ matrix，$\lambda_1,\ldots,\lambda_r$ 為相異 eigenvalues。</p>
+<p>$A$ 可對角化 $\Longleftrightarrow m_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_r)$</p>
+<p>也就是 $m_A(x)$ 全部都是一次方。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>線性代數-6</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://douobb.github.io/2026/07/13/線性代數-6/">https://douobb.github.io/2026/07/13/線性代數-6/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>douobb</h></div></div><div class="post-copyright-c"><h>發布於</h><div class="post-copyright-cc-info"><h>2026-07-13</h></div></div><div class="post-copyright-u"><h>更新於</h><div class="post-copyright-cc-info"><h>2026-07-14</h></div></div><div class="post-copyright-c"><h>許可協議</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8/">線性代數</a></div><div class="post_share"><div class="social-share" data-image="/2026/07/13/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-6/cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2026/07/12/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-5/" title="線性代數-5"><img class="cover" src="/2026/07/12/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-5/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">線性代數-5</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2026/07/09/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-1/" title="線性代數-1"><img class="cover" src="/2026/07/09/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-1/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-09</div><div class="title">線性代數-1</div></div></a></div><div><a href="/2026/07/11/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-4/" title="線性代數-4"><img class="cover" src="/2026/07/11/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-4/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-11</div><div class="title">線性代數-4</div></div></a></div><div><a href="/2026/07/12/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-5/" title="線性代數-5"><img class="cover" src="/2026/07/12/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-5/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-12</div><div class="title">線性代數-5</div></div></a></div><div><a href="/2026/07/10/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-3/" title="線性代數-3"><img class="cover" src="/2026/07/10/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-3/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-10</div><div class="title">線性代數-3</div></div></a></div><div><a href="/2026/07/09/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-2/" title="線性代數-2"><img class="cover" src="/2026/07/09/%E7%B7%9A%E6%80%A7%E4%BB%A3%E6%95%B8-2/cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-09</div><div class="title">線性代數-2</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ch6-Jordan-form-%E5%8F%8A%E5%85%B6%E6%87%89%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Ch6 Jordan form 及其應用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%AA%E9%9B%B6%E7%AE%97%E5%AD%90"><span class="toc-number">1.1.</span> <span class="toc-text">冪零算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%A3%E7%BE%A9%E7%89%B9%E5%BE%B5%E9%8D%8A"><span class="toc-number">1.2.</span> <span class="toc-text">廣義特徵鍊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dot-diagram"><span class="toc-number">1.3.</span> <span class="toc-text">Dot diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jordan-form"><span class="toc-number">1.4.</span> <span class="toc-text">Jordan form</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cayley-Hamilton-%E5%AE%9A%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">Cayley-Hamilton 定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%87%89%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">應用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A5%B5%E5%B0%8F%E5%A4%9A%E9%A0%85%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">極小多項式</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By douobb</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script data-pjax type="text/javascript" src="/js/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/nav.js"></script><script> let backimg =["url(/img/background.jpg)","url(/img/background2.jpg)","url(/img/background3.jpg)","url(/img/background4.jpg)","url(/img/background5.jpg)","url(/img/background6.jpg)","url(/img/background7.jpg)","url(/img/background8.jpg)","url(/img/background9.jpg)","url(/img/background10.jpg)"];let index =Math.ceil(Math.random() * (backimg.length))-1;document.getElementById("web_bg").style.backgroundImage = backimg[index]</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
